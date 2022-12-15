@@ -1,0 +1,37 @@
+/* Locomotive css */
+
+html.has-scroll-smooth,
+.has-scroll-smooth body {
+  @apply overflow-hidden;
+}
+
+html.has-scroll-dragging {
+  @apply select-none;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+  @apply min-h-screen;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-container] {
+  @apply h-screen inline-block whitespace-nowrap;
+}
+
+[data-scroll-direction='horizontal'] [data-scroll-section] {
+  @apply inline-block align-top whitespace-nowrap h-full;
+}
+
+/* Lazyload css */
+.lazyload,
+.lazyloading {
+  @apply opacity-0;
+}
+
+.lazyloaded {
+  @apply opacity-100 transition-opacity duration-500;
+}
+
+/* Website css */
+html {
+  @apply bg-dark text-white;
+}
