@@ -33,7 +33,7 @@ export default {
       meta: [
         {
           hid: 'description',
-          firstName: 'description',
+          name: 'description',
           content: this.$config.app.description
         }
       ]

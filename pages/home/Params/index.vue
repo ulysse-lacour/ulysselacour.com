@@ -126,11 +126,17 @@ export default {
         french.classList.add('lang_selected')
         english.classList.remove('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'french')
+        this.$nextTick(() => {
+          this.$root.$refs.EnterButton.buttonAnimation()
+        })
       })
       english.addEventListener('click', () => {
         french.classList.remove('lang_selected')
         english.classList.add('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'english')
+        this.$nextTick(() => {
+          this.$root.$refs.EnterButton.buttonAnimation()
+        })
       })
     }
   }
