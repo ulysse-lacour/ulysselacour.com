@@ -29,11 +29,7 @@ export default {
 
   head() {
     return {
-      title:
-        this.$config.app.title +
-        this.$config.app.titleSeparator +
-        this.$config.app.titleTemplate,
-
+      title: this.$config.app.title + this.$config.app.titleSeparator + 'home',
       meta: [
         {
           hid: 'description',

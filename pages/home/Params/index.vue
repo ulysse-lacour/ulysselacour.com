@@ -18,9 +18,23 @@
     </svg>
     <div class="params_items">
       <div class="choose_lang">
-        <button id="lang_fr">&nbsp;molière&nbsp;</button>
+        <button
+          id="lang_fr"
+          :class="{
+            lang_selected: $store.state.language.chosenLanguage == 'french'
+          }"
+        >
+          &nbsp;molière&nbsp;
+        </button>
         <div id="lang_pipe"></div>
-        <button id="lang_uk">&nbsp;shakespeare&nbsp;</button>
+        <button
+          id="lang_uk"
+          :class="{
+            lang_selected: $store.state.language.chosenLanguage == 'english'
+          }"
+        >
+          &nbsp;shakespeare&nbsp;
+        </button>
       </div>
       <button id="exit_params" @click="HideParams">x</button>
     </div>
@@ -111,10 +125,12 @@ export default {
       french.addEventListener('click', () => {
         french.classList.add('lang_selected')
         english.classList.remove('lang_selected')
+        this.$store.commit('language/ChangeLanguage', 'french')
       })
       english.addEventListener('click', () => {
         french.classList.remove('lang_selected')
         english.classList.add('lang_selected')
+        this.$store.commit('language/ChangeLanguage', 'english')
       })
     }
   }
@@ -178,29 +194,29 @@ export default {
 }
 
 #lang_pipe {
-  width: 2px;
-  height: 2rem;
+  width: 1px;
+  height: 1.9rem;
   background-color: white;
 }
 
 #lang_uk {
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
-  margin-right: -0.5rem;
-  transition: 1s;
+  margin-right: -0.44rem;
+  transition: 0.5s;
 }
 
 #lang_fr {
   border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
-  margin-left: -0.5rem;
-  transition: 1s;
+  margin-left: -0.44rem;
+  transition: 0.5s;
 }
 
 .lang_selected {
   background-color: white;
   color: black;
   pointer-events: none;
-  transition: 1s;
+  transition: 0.5s;
 }
 </style>

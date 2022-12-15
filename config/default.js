@@ -13,7 +13,7 @@ export default {
     description: 'Ulysse Lacour website/portfolio, french web developper.',
     author: 'Ulysse Lacour',
 
-    title: 'ulysselacour.com',
+    title: 'ulysselacour',
     titleSeparator: ' — ',
     titleTemplate: 'portfolio',
 
