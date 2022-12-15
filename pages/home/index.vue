@@ -29,15 +29,11 @@ export default {
 
   head() {
     return {
-      title:
-        this.$config.app.title +
-        this.$config.app.titleSeparator +
-        this.$config.app.titleTemplate,
-
+      title: this.$config.app.title + this.$config.app.titleSeparator + 'home',
       meta: [
         {
           hid: 'description',
-          firstName: 'description',
+          name: 'description',
           content: this.$config.app.description
         }
       ]
@@ -73,15 +69,4 @@ export default {
 }
 </script>
 
-<style scoped>
-[data-scroll-section] {
-  height: 100vh;
-}
-[data-scroll-section] {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: xx-large;
-}
-</style>
+<style scoped></style>
