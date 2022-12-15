@@ -39,16 +39,16 @@ export default {
   methods: {
     buttonHighlight() {
       const letters = document.querySelectorAll('.enter_letter')
-      const drawing = document.querySelector('.path')
+      const nameLetters = document.querySelector('.name_letter')
 
       const initButtonAnimation = function () {
         this.buttonAnimation()
       }.bind(this)
 
-      drawing.addEventListener('animationend', () => {
+      nameLetters.addEventListener('animationend', () => {
         this.$gsap.from(letters, {
           y: 5,
-          duration: 1.5,
+          duration: 1,
           stagger: 0.025,
           ease: 'elastic.out',
           initButtonAnimation
@@ -108,6 +108,19 @@ export default {
   border-radius: 30px;
   display: flex;
   justify-content: center;
-  transition: 0.5s;
+  /* opacity: 0;
+  animation: appear 2s ease forwards; */
 }
+
+/* @keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
 </style>

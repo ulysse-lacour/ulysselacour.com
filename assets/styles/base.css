@@ -1,5 +1,4 @@
 /* Locomotive css */
-
 html.has-scroll-smooth,
 .has-scroll-smooth body {
   @apply overflow-hidden;
@@ -19,6 +18,17 @@ html.has-scroll-dragging {
 
 [data-scroll-direction='horizontal'] [data-scroll-section] {
   @apply inline-block align-top whitespace-nowrap h-full;
+}
+
+/* My basic locomotive set up */
+[data-scroll-section] {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: xx-large;
 }
 
 /* Lazyload css */

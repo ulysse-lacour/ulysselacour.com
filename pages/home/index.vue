@@ -69,15 +69,4 @@ export default {
 }
 </script>
 
-<style scoped>
-[data-scroll-section] {
-  height: 100vh;
-}
-[data-scroll-section] {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: xx-large;
-}
-</style>
+<style scoped></style>

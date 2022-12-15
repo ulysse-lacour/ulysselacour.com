@@ -63,6 +63,13 @@
 }
 
 @font-face {
+  font-family: 'Typefesse-full';
+  font-style: normal;
+  font-display: swap;
+  src: url('/fonts/Typefesse_Pleine.woff2') format('woff2');
+}
+
+@font-face {
   font-family: 'Outfit';
   font-weight: 900;
   font-display: swap;
