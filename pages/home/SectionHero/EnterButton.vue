@@ -106,6 +106,9 @@ export default {
   padding: 0.45rem 4.25rem;
   border: 1px white solid;
   border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -khtml-border-radius: 30px;
   display: flex;
   justify-content: center;
   /* opacity: 0;

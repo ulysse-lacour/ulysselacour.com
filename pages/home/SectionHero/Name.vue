@@ -61,7 +61,7 @@ h1 {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: font-size 1s;
+  transition: font-size 0.5s;
   cursor: pointer;
 }
 .name:hover {

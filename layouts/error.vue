@@ -102,6 +102,9 @@ section {
   border: 1px black solid;
   outline: 1px white solid;
   border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -khtml-border-radius: 30px;
   padding: 0.45rem 0.5rem;
   margin-top: 2.5rem;
   margin-bottom: 2.5rem;
@@ -114,5 +117,15 @@ section {
   background-color: white;
   color: black;
   transition: 0.5s;
+}
+
+/* SAFARI SPECIFIC RULES */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .link {
+      outline: 0px;
+      border: 1px white solid;
+    }
+  }
 }
 </style>

@@ -189,6 +189,9 @@ export default {
   padding: 0rem 0.5rem;
   border: 1px black solid;
   border-radius: 30px;
+  -webkit-border-radius: 30px;
+  -moz-border-radius: 30px;
+  -khtml-border-radius: 30px;
   outline: 1px white solid;
 }
 
@@ -207,14 +210,26 @@ export default {
 
 #lang_uk {
   border-top-right-radius: 30px;
+  -webkit-border-top-right-radius: 30px;
+  -moz-border-top-right-radius: 30px;
+  -khtml-border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  -moz-border-bottom-right-radius: 30px;
+  -khtml-border-bottom-right-: 30px;
   margin-right: -0.44rem;
   transition: 0.5s;
 }
 
 #lang_fr {
   border-top-left-radius: 30px;
+  -webkit-border-top-left-radius: 30px;
+  -moz-border-top-left-radius: 30px;
+  -khtml-border-top-left-radius: 30px;
   border-bottom-left-radius: 30px;
+  -webkit-border-top-left-radius: 30px;
+  -moz-border-top-left-radius: 30px;
+  -khtml-border-top-left-radius: 30px;
   margin-left: -0.44rem;
   transition: 0.5s;
 }
@@ -224,5 +239,21 @@ export default {
   color: black;
   pointer-events: none;
   transition: 0.5s;
+}
+
+/* SAFARI SPECIFIC RULES */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .choose_lang {
+      outline: 0px;
+      border: 1px white solid;
+    }
+    #lang_fr {
+      margin-left: -0.5rem;
+    }
+    #lang_uk {
+      margin-right: -0.5rem;
+    }
+  }
 }
 </style>

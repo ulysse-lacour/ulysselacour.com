@@ -320,6 +320,9 @@ a:hover {
     font-family: 'Typefesse-full';
     border: 1px white solid;
     border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -khtml-border-radius: 30px;
     padding: 0.45rem 0.5rem;
     margin-top: 2rem;
   }
