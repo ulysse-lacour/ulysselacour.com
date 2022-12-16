@@ -35,11 +35,20 @@ export default {
         reversed: true
       })
 
-      animateLetters.to(nameLetters, {
-        y: 'random(-5, 5)',
-        stagger: 0.025,
-        ease: 'none'
-      })
+      animateLetters
+        .to(nameLetters, {
+          scale: 1.2,
+          ease: 'power1.out'
+        })
+        .to(
+          nameLetters,
+          {
+            x: 'random(-2, 2)',
+            y: 'random(-5, 5)',
+            ease: 'none'
+          },
+          '<'
+        )
 
       name.addEventListener('mouseenter', () => animateLetters.play(0))
       name.addEventListener('mouseleave', () => animateLetters.reverse())
@@ -55,17 +64,14 @@ h1 {
 }
 .name {
   font-family: 'Director';
-  font-size: 2rem;
-  line-height: 1rem;
+  font-size: 3rem;
+  line-height: 2rem;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: font-size 0.5s;
   cursor: pointer;
-}
-.name:hover {
-  font-size: 2.25rem;
 }
 
 #first_name,

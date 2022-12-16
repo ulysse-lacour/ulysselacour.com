@@ -102,8 +102,9 @@ export default {
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;
+  line-height: 1.5rem;
   width: 7rem;
-  padding: 0.45rem 4.25rem;
+  padding: 0.4rem 4rem;
   border: 1px white solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
@@ -111,19 +112,5 @@ export default {
   -khtml-border-radius: 30px;
   display: flex;
   justify-content: center;
-  /* opacity: 0;
-  animation: appear 2s ease forwards; */
 }
-
-/* @keyframes appear {
-  0% {
-    opacity: 0;
-  }
-  50% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 </style>
