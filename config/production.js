@@ -5,7 +5,7 @@ export default {
   },
 
   app: {
-    baseUrl: 'APP URL',
-    url: 'APP URL'
+    baseUrl: 'https://ulysselacour.com',
+    url: 'https://ulysselacour.com'
   }
 }
