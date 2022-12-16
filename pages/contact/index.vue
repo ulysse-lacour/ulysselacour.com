@@ -294,22 +294,23 @@ export default {
 .building {
   font-size: 4rem;
 }
+
 .building,
 a {
   font-family: 'Typefesse';
 }
+
 h1 {
   font-family: 'Outfit';
   font-weight: 100;
   text-align: center;
 }
+
 a:hover {
   font-family: 'Typefesse-full';
-  transform: scale(1.1);
-  transition: 0.5s;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 640px) {
   .building,
   h1 {
     font-size: 2rem;
@@ -323,7 +324,26 @@ a:hover {
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -khtml-border-radius: 30px;
-    padding: 0.45rem 0.5rem;
+    padding: 0.4rem 0.4rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .building,
+  h1 {
+    font-size: 3rem;
+  }
+
+  a {
+    font-size: 1.5rem;
+    font-family: 'Typefesse-full';
+    border: 1px white solid;
+    border-radius: 30px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    -khtml-border-radius: 30px;
+    padding: 0.4rem 0.4rem;
     margin-top: 2rem;
   }
 }

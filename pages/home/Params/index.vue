@@ -86,7 +86,7 @@ export default {
         .to(
           params,
           {
-            x: -142,
+            x: -24,
             opacity: 1,
             ease: 'power2.in'
           },
@@ -155,14 +155,13 @@ export default {
 
 .params_items {
   z-index: 1;
-  width: 2rem;
-  height: 2rem;
+  /* width: 3rem;
+  height: 3rem; */
   position: fixed;
-  top: 1.5rem;
-  right: 1.5rem;
+  top: 0.5rem;
+  right: 0.5rem;
   font-family: 'Outfit';
   font-weight: 200;
-  font-size: 1.25rem;
   opacity: 0;
   color: white;
   display: flex;
@@ -183,6 +182,7 @@ export default {
 }
 
 .choose_lang {
+  height: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -197,14 +197,17 @@ export default {
 
 #lang_fr,
 #lang_uk {
-  width: 8rem;
-  max-width: 8rem;
+  width: 9rem;
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+  /* padding-top: 0.25rem; */
+  padding-bottom: 0.25rem;
   transition: 0.5s;
 }
 
 #lang_pipe {
   width: 1px;
-  height: 1.9rem;
+  height: 1.75rem;
   background-color: white;
 }
 
@@ -249,10 +252,10 @@ export default {
       border: 1px white solid;
     }
     #lang_fr {
-      margin-left: -0.5rem;
+      margin-left: -0.45rem;
     }
     #lang_uk {
-      margin-right: -0.5rem;
+      margin-right: -0.45rem;
     }
   }
 }
