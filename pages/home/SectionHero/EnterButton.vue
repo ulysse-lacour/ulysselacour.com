@@ -77,20 +77,38 @@ export default {
     },
 
     Transition() {
-      const drawing = document.querySelector('.path')
+      const drawing = document.querySelector('.svg_container')
+      const name = document.querySelector('.name')
+      const nameLetters = document.querySelectorAll('.name_letter')
       const enterButton = document.querySelector('.enterButton')
       const parameters = document.querySelector('.parameters')
 
-      drawing.classList.add('erase')
+      const nexPage = function () {
+        this.$router.push('/contact')
+      }.bind(this)
 
-      this.$gsap.to([enterButton, parameters], {
+      this.$gsap.to([enterButton, parameters, drawing], {
         opacity: 0,
         duration: 0.5,
         ease: 'power1.out'
       })
-
-      drawing.addEventListener('animationend', () => {
-        this.$router.push('/contact')
+      this.$gsap.to(name, {
+        lineHeight: '3rem',
+        duration: 0.5,
+        ease: 'power1.out'
+      })
+      this.$gsap.to(nameLetters, {
+        scale: 1.2,
+        x: 'random(-2, 2)',
+        y: 'random(-5, 5)',
+        ease: 'power1.out'
+      })
+      this.$gsap.to([name], {
+        opacity: 0,
+        delay: 1,
+        duration: 0.5,
+        ease: 'power1.out',
+        nexPage
       })
     }
   }
@@ -99,18 +117,35 @@ export default {
 
 <style scoped>
 .enterButton {
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  width: 7rem;
+  padding: 0.4rem 4rem;
+  margin-bottom: 2rem;
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  width: 7rem;
-  padding: 0.4rem 4rem;
   border: 1px white solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
-  display: flex;
-  justify-content: center;
+}
+
+@media screen and (max-width: 640px) {
+  .enterButton {
+    margin-bottom: 6rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .enterButton {
+    margin-bottom: 4rem;
+  }
 }
 </style>

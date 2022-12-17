@@ -20,8 +20,6 @@
         </h1>
       </div>
 
-      <!-- <NuxtLink class="link" to="/">HOME</NuxtLink> -->
-
       <button class="homeButton" @click="$router.push('/')">
         <div class="home_letter">H</div>
         <div class="home_letter">O</div>
@@ -123,29 +121,6 @@ section {
 .error_letter {
   opacity: 0;
 }
-
-/* .link {
-  font-size: 1.5rem;
-  font-family: 'Typefesse';
-  border: 1px black solid;
-  outline: 1px white solid;
-  border-radius: 30px;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -khtml-border-radius: 30px;
-  padding: 0.45rem 0.5rem;
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  background-color: black;
-  color: white;
-  transition: 0.5s;
-} */
-
-/* .link:hover {
-  background-color: white;
-  color: black;
-  transition: 0.5s;
-} */
 
 .homeButton {
   font-family: 'Outfit';

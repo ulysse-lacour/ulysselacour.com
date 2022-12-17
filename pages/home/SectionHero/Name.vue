@@ -49,7 +49,6 @@ export default {
           },
           '<'
         )
-
       name.addEventListener('mouseenter', () => animateLetters.play(0))
       name.addEventListener('mouseleave', () => animateLetters.reverse())
     }
@@ -60,18 +59,18 @@ export default {
 <style scoped>
 h1 {
   margin: 1rem;
-  /* background-color: #030303; */
 }
 .name {
+  z-index: 1;
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: 'Director';
   font-size: 3rem;
   line-height: 2rem;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   transition: font-size 0.5s;
-  cursor: pointer;
+  cursor: default;
 }
 
 #first_name,
@@ -94,6 +93,20 @@ h1 {
   }
   100% {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .name {
+    font-size: 2.5rem;
+    line-height: 1.5rem;
+    top: 45%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .name {
+    top: 45%;
   }
 }
 </style>
