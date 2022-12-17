@@ -69,7 +69,7 @@ export default {
       const params = document.querySelector('.params_wheel')
       this.$gsap.from(params, {
         rotation: 360,
-        duration: 2,
+        duration: 1.25,
         ease: 'steps(30)'
       })
     },
@@ -81,6 +81,8 @@ export default {
       showParams
         .to([paramsWheel, params], {
           x: 70,
+          pointerEvents: 'auto',
+          duration: 0.25,
           ease: 'power2.in'
         })
         .to(
@@ -88,6 +90,7 @@ export default {
           {
             x: -24,
             opacity: 1,
+            duration: 0.25,
             ease: 'power2.in'
           },
           '>'
@@ -103,13 +106,16 @@ export default {
       showParams
         .to(params, {
           x: 60,
+          pointerEvents: 'none',
           opacity: 0,
+          duration: 0.25,
           ease: 'power2.in'
         })
         .to(
           paramsWheel,
           {
             x: -0.05,
+            duration: 0.25,
             ease: 'power2.in'
           },
           '>'
@@ -126,6 +132,7 @@ export default {
         french.classList.add('lang_selected')
         english.classList.remove('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'french')
+        setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
           this.$root.$refs.EnterButton.buttonAnimation()
         })
@@ -134,6 +141,7 @@ export default {
         french.classList.remove('lang_selected')
         english.classList.add('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'english')
+        setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
           this.$root.$refs.EnterButton.buttonAnimation()
         })
@@ -146,28 +154,28 @@ export default {
 <style scoped>
 .params_wheel {
   z-index: 2;
-  width: 2.5rem;
-  height: 2.5rem;
   position: fixed;
   top: 1rem;
   right: 1.5rem;
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
 }
 
 .params_items {
   z-index: 1;
-  /* width: 3rem;
-  height: 3rem; */
+  opacity: 0;
   position: fixed;
   top: 0.5rem;
   right: 0.5rem;
-  font-family: 'Outfit';
-  font-weight: 200;
-  opacity: 0;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: visible;
+  font-family: 'Outfit';
+  font-weight: 200;
+  color: white;
+  pointer-events: none;
 }
 
 #exit_params {
@@ -175,6 +183,7 @@ export default {
   margin-left: 1.25rem;
   margin-top: -0.75rem;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 #exit_params:hover {
@@ -200,9 +209,9 @@ export default {
   width: 9rem;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  /* padding-top: 0.25rem; */
   padding-bottom: 0.25rem;
   transition: 0.5s;
+  cursor: pointer;
 }
 
 #lang_pipe {
