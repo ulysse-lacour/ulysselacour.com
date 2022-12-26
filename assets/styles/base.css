@@ -22,7 +22,7 @@ html.has-scroll-dragging {
 
 /* My basic locomotive set up */
 [data-scroll-section] {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -41,7 +41,39 @@ html.has-scroll-dragging {
   @apply opacity-100 transition-opacity duration-500;
 }
 
-/* Website css */
-html {
+/* Color-mode css */
+/* html {
   @apply bg-dark text-white;
+} */
+:root {
+  --color: #fdf9f3;
+  --color-primary: #fdf9f3;
+  --color-secondary: #fdf9f3;
+  --bg: #030303;
+  --bg-secondary: #06131e;
+  --border-color: #fdf9f3;
+}
+
+.dark-mode {
+  --color: #fdf9f3;
+  --color-primary: #fdf9f3;
+  --color-secondary: #fdf9f3;
+  --bg: #030303;
+  --bg-secondary: #06131e;
+  --border-color: #fdf9f3;
+}
+.light-mode {
+  --color: #433422;
+  --color-primary: #433422;
+  --color-secondary: #504231;
+  --bg: #f1efd0;
+  /* OR : #ffffe3 */
+  --bg-secondary: #eae0c9;
+  --border-color: #ded0bf;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--color);
+  transition: background-color 0.5s, color 0.75s;
 }

@@ -165,25 +165,34 @@ export default {
     },
 
     LanguageSelector() {
+      const contactButton = document.querySelector('#contact')
       const french = document.querySelector('#lang_fr')
       const english = document.querySelector('#lang_uk')
 
       french.addEventListener('click', () => {
+        this.$gsap.to(contactButton, {
+          width: '12rem',
+          duration: 0.05
+        })
         french.classList.add('lang_selected')
         english.classList.remove('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'french')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.EnterButton.buttonAnimation()
+          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
         })
       })
       english.addEventListener('click', () => {
+        this.$gsap.to(contactButton, {
+          width: '10rem',
+          duration: 0.25
+        })
         french.classList.remove('lang_selected')
         english.classList.add('lang_selected')
         this.$store.commit('language/ChangeLanguage', 'english')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.EnterButton.buttonAnimation()
+          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
         })
       })
     },
@@ -307,13 +316,11 @@ export default {
 #lang_uk {
   width: 9rem;
   font-size: 1.5rem;
-  font-weight: 200;
   line-height: 1.5rem;
   padding-bottom: 0.25rem;
   transition: 0.5s;
   cursor: pointer;
 }
-
 #lang_pipe {
   width: 1px;
   height: 1.75rem;

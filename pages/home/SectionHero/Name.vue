@@ -60,11 +60,13 @@ export default {
 h1 {
   margin: 1rem;
 }
+
 .name {
   z-index: 1;
   position: absolute;
-  top: 42%;
+  top: 45%;
   left: 50%;
+  -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   font-family: 'Director';
   font-size: 3rem;
@@ -96,17 +98,18 @@ h1 {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 640px) {
   .name {
-    font-size: 2.5rem;
-    line-height: 1.5rem;
-    top: 45%;
+    font-size: 3rem;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%) scale(0.75);
+    transform: translate(-50%, -50%) scale(0.75);
   }
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 640px) and (max-width: 1024px) {
   .name {
-    top: 45%;
+    top: 47.5%;
   }
 }
 </style>

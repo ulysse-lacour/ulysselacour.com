@@ -84,7 +84,7 @@ export default {
       const parameters = document.querySelector('.parameters')
 
       const nexPage = function () {
-        this.$router.push('/contact')
+        this.$router.push('/portfolio')
       }.bind(this)
 
       this.$gsap.to([enterButton, parameters, drawing], {
@@ -117,35 +117,20 @@ export default {
 
 <style scoped>
 .enterButton {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   width: 7rem;
   padding: 0.4rem 4rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  border: 1px white solid;
+  border: 2px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
-}
-
-@media screen and (max-width: 640px) {
-  .enterButton {
-    margin-bottom: 6rem;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 1024px) {
-  .enterButton {
-    margin-bottom: 4rem;
-  }
 }
 </style>

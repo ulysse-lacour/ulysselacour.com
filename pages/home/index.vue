@@ -9,6 +9,7 @@
         pointer-events: none;
         position: absolute;
         top: 0;
+        -webkit-transform: translateY(-100%);
         transform: translateY(-100%);
       "
       role="none presentation"
