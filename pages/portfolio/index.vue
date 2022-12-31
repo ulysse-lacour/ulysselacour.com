@@ -20,86 +20,32 @@
       <span style="font-family: 'Typefesse'"></span>
       <span style="font-family: 'Typefesse-full'"></span>
     </div>
-    <SmoothScroll>
-      <div class="page_container">
-        <Params />
-        <Skills />
+    <div class="page_container">
+      <Params />
+      <Skills />
+      <Projects />
+      <WhoAmI />
 
-        <section
-          data-scroll-section
-          data-scroll
-          data-scroll-call="SecondSection"
-        >
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'english'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            PROJECTS
-          </h1>
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'french'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            PROJET
-          </h1>
-        </section>
-
-        <section data-scroll-section>
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'english'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            WHOAMI
-          </h1>
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'french'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            BIO
-          </h1>
-        </section>
-
-        <section data-scroll-section>
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'english'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            BONUS
-          </h1>
-          <h1
-            v-if="$store.state.language.chosenLanguage == 'french'"
-            data-scroll
-            data-scroll-speed="1"
-          >
-            BONUS
-          </h1>
-        </section>
-      </div>
-    </SmoothScroll>
+      <section>
+        <h1 v-if="$store.state.language.chosenLanguage == 'english'">BONUS</h1>
+        <h1 v-if="$store.state.language.chosenLanguage == 'french'">BONUS</h1>
+      </section>
+    </div>
   </main>
 </template>
 
 <script>
 import Params from './Params/index.vue'
 import Skills from './Skills/index.vue'
-import SmoothScroll from '~/components/SmoothScroll'
+import Projects from './Projects/index.vue'
+import WhoAmI from './WhoAmI/index.vue'
 
 export default {
   components: {
     Params,
     Skills,
-    SmoothScroll
-  },
-
-  data() {
-    return {
-      scroll: null
-    }
+    Projects,
+    WhoAmI
   },
 
   head() {
@@ -118,24 +64,12 @@ export default {
   },
 
   mounted() {
-    this.locomotiveScrollInit()
-    this.opacityOnScroll()
+    this.AppearOnScroll()
   },
 
   beforeDestroy() {},
 
   methods: {
-    locomotiveScrollInit() {
-      this.scroll = new this.$LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-        getDirection: true
-      })
-      this.scroll.stop()
-      this.scroll.update()
-      this.scroll.start()
-    },
-
     showDetails(event) {
       const chevron = event.currentTarget.querySelector('a')
       const skills =
@@ -160,22 +94,77 @@ export default {
         })
       }
     },
+    AppearOnScroll() {
+      const scrollElements = document.querySelectorAll('.js-scroll')
 
-    opacityOnScroll() {
-      // const eyes = document.querySelectorAll('[data-img-eye]')
-      // this.scroll.on('scroll', ({ limit, scroll }) => {
-      //   const progress = scroll.y / limit.y
-      //   console.log(0.25 + progress * 5)
-      //   eyes.forEach(function (elem) {
-      //     elem.style.opacity = 0.25 + progress * 5
-      //   })
-      // })
+      let throttleTimer
+
+      const throttle = (callback, time) => {
+        if (throttleTimer) return
+
+        throttleTimer = true
+        setTimeout(() => {
+          callback()
+          throttleTimer = false
+        }, time)
+      }
+
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top
+
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) /
+            dividend
+        )
+      }
+
+      const elementOutofView = el => {
+        const elementTop = el.getBoundingClientRect().top
+
+        return (
+          elementTop >
+          (window.innerHeight || document.documentElement.clientHeight)
+        )
+      }
+
+      const displayScrollElement = element => {
+        element.classList.add('scrolled')
+      }
+
+      const hideScrollElement = element => {
+        element.classList.remove('scrolled')
+      }
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach(el => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el)
+          } else if (elementOutofView(el)) {
+            hideScrollElement(el)
+          }
+        })
+      }
+
+      window.addEventListener('scroll', () => {
+        throttle(() => {
+          handleScrollAnimation()
+        }, 250)
+      })
     }
   }
 }
 </script>
 
 <style scoped>
+section {
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
 /* .title {
   text-align: center;
 }

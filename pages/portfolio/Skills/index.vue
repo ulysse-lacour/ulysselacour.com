@@ -1,29 +1,15 @@
 <template>
-  <section data-scroll-section>
-    <Eyes />
-    <div
-      v-if="$store.state.language.chosenLanguage == 'english'"
-      class="hider"
-      data-scroll
-    >
+  <section>
+    <div v-if="$store.state.language.chosenLanguage == 'english'" class="hider">
       <h1 class="title">FULL-STACK WEB DEVELOPER</h1>
     </div>
-    <div
-      v-if="$store.state.language.chosenLanguage == 'french'"
-      class="hider"
-      data-scroll
-    >
+    <div v-if="$store.state.language.chosenLanguage == 'french'" class="hider">
       <h1 class="title">DEVELOPEUR WEB FULL-STACK</h1>
     </div>
 
     <div class="skills">
       <div class="skill_container">
-        <div
-          id="python_card"
-          class="skill_card"
-          data-scroll
-          @click="showDetails"
-        >
+        <div id="python_card" class="skill_card" @click="showDetails">
           <div id="python_header" class="skill_header">
             <h2 style="margin-left: 1.5rem">Python</h2>
             <AnimatedChevron />
@@ -39,7 +25,7 @@
       </div>
 
       <div class="skill_container">
-        <div id="js_card" class="skill_card" data-scroll @click="showDetails">
+        <div id="js_card" class="skill_card" @click="showDetails">
           <div id="js_header" class="skill_header">
             <h2 style="margin-left: 1.5rem">Javascript</h2>
             <AnimatedChevron />
@@ -53,7 +39,7 @@
       </div>
 
       <div class="skill_container">
-        <div id="web_card" class="skill_card" data-scroll @click="showDetails">
+        <div id="web_card" class="skill_card" @click="showDetails">
           <div id="web_header" class="skill_header">
             <h2
               v-if="$store.state.language.chosenLanguage == 'english'"
@@ -80,7 +66,7 @@
       </div>
 
       <div class="skill_container">
-        <div id="sql_card" class="skill_card" data-scroll @click="showDetails">
+        <div id="sql_card" class="skill_card" @click="showDetails">
           <div id="sql_header" class="skill_header">
             <h2 style="margin-left: 1.5rem">SQL</h2>
             <AnimatedChevron />
@@ -95,7 +81,7 @@
         </div>
       </div>
 
-      <div id="other_card" class="skill_card" data-scroll>
+      <div id="other_card" class="skill_card">
         <div id="other_header" class="skill_header">
           <h2>HTML, CSS & Bash</h2>
         </div>
@@ -112,13 +98,11 @@
 </template>
 
 <script>
-import Eyes from './Eyes/index.vue'
 import AnimatedChevron from './AnimatedChevron/index.vue'
 import ContactButton from './ContactButton/index.vue'
 
 export default {
   components: {
-    Eyes,
     AnimatedChevron,
     ContactButton
   },
@@ -191,11 +175,20 @@ export default {
 </script>
 
 <style scoped>
+section {
+  min-height: 101vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 .hider {
   overflow: hidden;
   line-height: 2.5rem;
   margin-top: 4rem;
-  margin-bottom: 7rem;
+  margin-bottom: 6rem;
 }
 .title {
   font-family: 'Outfit';
@@ -211,7 +204,7 @@ export default {
 
 .skills {
   font-family: 'Outfit';
-  width: 95vw;
+  width: 90vw;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -225,6 +218,7 @@ export default {
   height: 125px;
 }
 .skill_card {
+  width: 330px !important;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -237,6 +231,7 @@ export default {
 .skill_card:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
+  transition: 0.25s;
 }
 
 /* border top & bottom */
@@ -297,6 +292,7 @@ export default {
 
 #other_card {
   cursor: default;
+  margin-bottom: 2rem;
 }
 
 #python_header {

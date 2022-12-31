@@ -82,12 +82,13 @@ export default {
       const nameLetters = document.querySelectorAll('.name_letter')
       const enterButton = document.querySelector('.enterButton')
       const parameters = document.querySelector('.parameters')
+      const paramsWheel = document.querySelector('#params_wheel')
 
       const nexPage = function () {
         this.$router.push('/portfolio')
       }.bind(this)
 
-      this.$gsap.to([enterButton, parameters, drawing], {
+      this.$gsap.to([enterButton, parameters, paramsWheel, drawing], {
         opacity: 0,
         duration: 0.5,
         ease: 'power1.out'

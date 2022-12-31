@@ -210,7 +210,7 @@ export default {
 <style scoped>
 .params_wheel {
   z-index: 2;
-  position: absolute;
+  position: fixed;
   top: 1rem;
   right: 1rem;
   width: 2.5rem;
@@ -226,7 +226,7 @@ export default {
 .params_items {
   z-index: 1;
   opacity: 0;
-  position: absolute;
+  position: fixed;
   top: 0.5rem;
   right: 0.5rem;
   display: flex;
@@ -362,7 +362,32 @@ export default {
 
 @media only screen and (max-width: 640px) {
   .params_wheel {
+    position: absolute;
     right: 1rem;
+  }
+
+  .params_items {
+    position: absolute;
+  }
+
+  #exit_params {
+    margin-right: -1rem;
+  }
+  .choose_lang {
+    margin-right: -0.5rem;
+  }
+  .dark_or_light {
+    margin-right: 0.5rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  .params_wheel {
+    position: absolute;
+  }
+
+  .params_items {
+    position: absolute;
   }
 }
 

@@ -14,8 +14,9 @@
     <a
       v-if="$store.state.language.chosenLanguage == 'english'"
       id="contact"
-      data-scroll
       href="mailto:contact@ulysselacour.com"
+      data-scroll
+      data-scroll-speed="-1"
     >
       <div class="contact_letter">C</div>
       <div class="contact_letter">O</div>
@@ -28,9 +29,10 @@
     <a
       v-if="$store.state.language.chosenLanguage == 'french'"
       id="contact"
-      data-scroll
       href="mailto:contact@ulysselacour.com"
       style="width: 12rem"
+      data-scroll
+      data-scroll-speed="-1"
     >
       <div class="contact_letter">C</div>
       <div class="contact_letter">O</div>
@@ -55,13 +57,12 @@ export default {}
   justify-content: center;
   width: 10rem;
   padding: 0.4rem 4rem;
-  margin-top: 4rem;
-  margin-bottom: 2rem;
+  margin-top: 2rem;
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  border: 2px var(--color) solid;
+  border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
