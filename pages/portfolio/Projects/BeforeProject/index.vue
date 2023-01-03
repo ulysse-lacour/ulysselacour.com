@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import { scrollIntoView } from 'seamless-scroll-polyfill'
+
 export default {
   props: {
     isEmpty: {
@@ -65,7 +67,7 @@ export default {
         )
       slideProjects.play(0)
 
-      nextProject.scrollIntoView({
+      scrollIntoView(nextProject, {
         behavior: 'smooth',
         block: 'nearest',
         inline: 'center'
@@ -133,47 +135,35 @@ svg {
 
 /* Responsive */
 @media only screen and (max-width: 440px) {
-  .chevron__line1,
-  .chevron__line2 {
-    stroke: var(--bg);
-  }
-
   .before_project_chevron {
     position: relative;
     top: 0;
     left: 25px;
-    transform: scale(0.5) rotate(90deg);
-    -webkit-transform: scale(0.5) rotate(90deg);
+    transform: scale(0.4) rotate(90deg);
+    -webkit-transform: scale(0.4) rotate(90deg);
+    opacity: 1;
   }
 }
 
 @media (min-width: 440px) and (max-width: 640px) {
-  .chevron__line1,
-  .chevron__line2 {
-    stroke: var(--bg);
-  }
-
   .before_project_chevron {
     position: relative;
     top: 0;
     left: 0;
-    transform: scale(0.5) rotate(90deg);
-    -webkit-transform: scale(0.5) rotate(90deg);
+    transform: scale(0.4) rotate(90deg);
+    -webkit-transform: scale(0.4) rotate(90deg);
+    opacity: 1;
   }
 }
 
 @media (min-width: 640px) and (max-width: 900px) {
-  .chevron__line1,
-  .chevron__line2 {
-    stroke: var(--bg);
-  }
-
   .before_project_chevron {
     position: relative;
     top: 0;
     left: 0;
-    transform: scale(0.5) rotate(90deg);
-    -webkit-transform: scale(0.5) rotate(90deg);
+    transform: scale(0.4) rotate(90deg);
+    -webkit-transform: scale(0.4) rotate(90deg);
+    opacity: 1;
   }
 }
 </style>

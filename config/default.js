@@ -10,7 +10,7 @@ export default {
   app: {
     name: 'Ulysse Lacour',
     shortName: 'ulysse lacour',
-    description: 'Ulysse Lacour website/portfolio, french web developper.',
+    description: 'Ulysse Lacour portfolio, french web developper.',
     author: 'Ulysse Lacour',
 
     title: 'ulysselacour',

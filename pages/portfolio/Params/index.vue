@@ -128,7 +128,7 @@ export default {
         .to(
           params,
           {
-            x: -15,
+            x: -20,
             opacity: 1,
             duration: 0.25,
             ease: 'power2.in'
@@ -176,6 +176,7 @@ export default {
         })
         french.classList.add('lang_selected')
         english.classList.remove('lang_selected')
+        localStorage.setItem('language', 'french')
         this.$store.commit('language/ChangeLanguage', 'french')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
@@ -189,6 +190,7 @@ export default {
         })
         french.classList.remove('lang_selected')
         english.classList.add('lang_selected')
+        localStorage.setItem('language', 'english')
         this.$store.commit('language/ChangeLanguage', 'english')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
@@ -217,6 +219,7 @@ export default {
   height: 2.5rem;
   cursor: pointer;
 }
+
 #params_pivot,
 #params_wheel_path {
   stroke: var(--color);
@@ -234,7 +237,7 @@ export default {
   align-items: center;
   overflow: visible;
   font-family: 'Outfit';
-  font-weight: 200;
+  font-weight: 100;
   color: var(--color);
   pointer-events: none;
 }
@@ -243,13 +246,25 @@ export default {
   font-size: 3rem;
   margin-left: 1rem;
   margin-top: -0.75rem;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   cursor: pointer;
 }
 
 #exit_params:hover {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
 }
 
 .dark_or_light {
@@ -260,11 +275,15 @@ export default {
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  border: 2px var(--color) solid;
+  background-color: var(--bg);
+  border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
 }
@@ -274,26 +293,44 @@ export default {
   height: 1.25rem;
   stroke: var(--color);
   fill: var(--color);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
 }
 
 .dark_or_light:hover {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
 }
 
 .dark_or_light:hover > .sun_and_moon {
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
   -webkit-transition: -webkit-transform 0.25s;
   transition: transform 0.25s;
 }
 
 #sun,
 #moon {
+  -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   -webkit-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
@@ -309,7 +346,7 @@ export default {
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
-  outline: 1px var(--color) solid;
+  background-color: var(--bg);
 }
 
 #lang_fr,
@@ -318,8 +355,12 @@ export default {
   font-size: 1.5rem;
   line-height: 1.5rem;
   padding-bottom: 0.25rem;
-  transition: 0.5s;
   cursor: pointer;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
 }
 #lang_pipe {
   width: 1px;
@@ -337,6 +378,10 @@ export default {
   -moz-border-bottom-right-radius: 30px;
   -khtml-border-bottom-right-: 30px;
   margin-right: -0.44rem;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -350,13 +395,22 @@ export default {
   -moz-border-top-left-radius: 30px;
   -khtml-border-top-left-radius: 30px;
   margin-left: -0.44rem;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 .lang_selected {
+  font-weight: 200;
   background-color: var(--color);
   color: var(--bg);
   pointer-events: none;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
@@ -371,13 +425,13 @@ export default {
   }
 
   #exit_params {
-    margin-right: -1rem;
+    margin-right: -1.25rem;
   }
   .choose_lang {
-    margin-right: -0.5rem;
+    margin-right: -0.75rem;
   }
   .dark_or_light {
-    margin-right: 0.5rem;
+    margin-right: 0.25rem;
   }
 }
 
@@ -388,22 +442,6 @@ export default {
 
   .params_items {
     position: absolute;
-  }
-}
-
-/* SAFARI SPECIFIC RULES */
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .choose_lang {
-      outline: 0px;
-      border: 1px white solid;
-    }
-    #lang_fr {
-      margin-left: -0.45rem;
-    }
-    #lang_uk {
-      margin-right: -0.45rem;
-    }
   }
 }
 </style>

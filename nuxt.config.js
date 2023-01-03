@@ -42,8 +42,6 @@ export default {
 
   css: ['~/assets/styles/main.css'],
 
-  plugins: ['~/plugins/locomotiveScroll.client.js'],
-
   layoutTransition: {
     name: 'layout',
     mode: 'out-in'

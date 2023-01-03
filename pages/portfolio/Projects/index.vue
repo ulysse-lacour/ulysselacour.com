@@ -1,5 +1,12 @@
 <template>
   <section class="projects_container">
+    <transition name="fade" mode="out-in"
+      ><VideoModal
+        v-show="showModal"
+        :video-to-show="chosenModal"
+        @close-modal="showModal = false"
+    /></transition>
+
     <h2 v-if="$store.state.language.chosenLanguage == 'english'" id="intro">
       MY WEBSITES
     </h2>
@@ -209,8 +216,15 @@
                   href="https://homeworks.ulysselacour.com/color/all"
                   >Site</a
                 >
+                <button
+                  id="middle_link"
+                  class="link"
+                  @click="ShowVideo('HOMEWORKS', $event)"
+                >
+                  Video
+                </button>
                 <a
-                  id="second_link"
+                  id="third_link"
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -404,26 +418,18 @@
                 v-if="$store.state.language.chosenLanguage == 'english'"
                 class="description_text"
               >
-                This
-                <a
-                  class="partner_link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="https://naomiprostkasbi.com/"
-                  >website</a
-                >
-                was designed by and belongs to my&nbsp;&nbsp;
+                This website was designed by and belongs to my&#32;&#32;
                 <span class="double_word" style="width: 82px"
                   ><span class="partner">partner</span>
                   <span class="wifey">wifey</span></span
-                >&nbsp;&nbsp;
+                >&#32;&#32;:&#32;
                 <a
                   class="partner_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://naomiprostkasbi.com/"
                 >
-                  Naomi&nbsp;Prost&#8209;Kasbi</a
+                  Naomi&nbsp;Prost-Kasbi</a
                 >. The best art director, illustrator and independent designer I
                 know, as objectively as it can be of course. I have worked on
                 the front-end of this project, one of my favorites and first
@@ -433,18 +439,18 @@
                 v-if="$store.state.language.chosenLanguage == 'french'"
                 class="description_text"
               >
-                Ce site est le regroupe les travaux de ma&nbsp;&nbsp;
+                Ce site regroupe les travaux de ma&#32;&#32;
                 <span class="double_word" style="width: 115px"
                   ><span class="partner">partenaire</span>
                   <span class="wifey">dulcinée</span> </span
-                >&nbsp;&nbsp;
+                >&#32;&#32;:&#32;
                 <a
                   class="partner_link"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://naomiprostkasbi.com/"
                 >
-                  Naomi&nbsp;Prost&#8209;Kasbi</a
+                  Naomi&nbsp;Prost-Kasbi</a
                 >. La meilleure directrice artistique, illustratrice et
                 graphiste indépendante, en toute objectivité bien sûr. J’ai
                 participé au front-end de ce projet qui est un de mes tout
@@ -464,20 +470,12 @@
             <div class="links">
               <div class="links_items">
                 <a
-                  id="first_link"
+                  id="unique_link"
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
                   href="https://naomiprostkasbi.com/"
                   >Site</a
-                >
-                <a
-                  id="second_link"
-                  class="link"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="#"
-                  >Github</a
                 >
               </div>
             </div>
@@ -493,6 +491,7 @@
 </template>
 
 <script>
+import VideoModal from './VideoModal/index.vue'
 import ContactButton from './ContactButton/index.vue'
 import BeforeProject from './BeforeProject/index.vue'
 import NextProject from './NextProject/index.vue'
@@ -500,16 +499,29 @@ import Partners from './Partners/index.vue'
 
 export default {
   components: {
+    VideoModal,
     ContactButton,
     BeforeProject,
     NextProject,
     Partners
   },
+
+  data() {
+    return {
+      chosenModal: '',
+      showModal: false
+    }
+  },
+
   mounted() {
     this.contactButtonAnimation()
   },
 
   methods: {
+    ShowVideo(video, event) {
+      this.showModal = true
+      this.chosenModal = video
+    },
     contactButtonAnimation() {
       const partners = document.querySelector('.partners')
       const contactButton = partners.querySelector('#contact')
@@ -605,9 +617,6 @@ section {
   justify-content: center;
   width: 992.5px;
   height: 75px;
-  font-family: 'Outfit';
-  font-weight: 600;
-  font-size: 2rem;
   border-top-left-radius: 12.5px;
   border-top-right-radius: 12.5px;
   -webkit-border-top-left-radius: 12.5px;
@@ -616,11 +625,13 @@ section {
   -webkit-border-top-right-radius: 12.5px;
   -moz-border-top-right-radius: 12.5px;
   -khtml-border-top-right-radius: 12.5px;
-  background-color: var(--color);
 }
 
 .project_title {
-  color: var(--bg);
+  font-family: 'Outfit';
+  font-weight: 300;
+  font-size: 2rem;
+  color: var(--color);
 }
 
 .project_details {
@@ -682,11 +693,13 @@ section {
   display: none;
 }
 
-.double_word:hover .partner {
+.double_word:hover .partner,
+.double_word:active .partner {
   display: none;
 }
 
-.double_word:hover .wifey {
+.double_word:hover .wifey,
+.double_word:active .wifey {
   display: inline;
 }
 
@@ -702,10 +715,7 @@ img {
 
 .image {
   width: 500px;
-  border-left: 1px var(--color) solid;
-  border-right: 1px var(--color) solid;
-  border-top: 1px var(--color) solid;
-  border-bottom: 1px var(--color) solid;
+  border: 1px var(--color) solid;
 }
 
 img {
@@ -732,13 +742,15 @@ img {
   /* cursor: default; */
 }
 
-.keyword:hover {
+.keyword:hover,
+.keyword:active {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   transition: 0.25s;
 }
 
 .partner_link {
+  font-weight: 200;
   text-decoration: none;
   position: relative;
 }
@@ -755,7 +767,8 @@ img {
   transition: transform 0.2s;
 }
 
-.partner_link:hover::before {
+.partner_link:hover::before,
+.partner_link:active::before {
   transform-origin: 0 0;
   transform: scaleX(1);
   transition: transform 0.4s;
@@ -774,11 +787,18 @@ img {
   transition: 0.25s;
 }
 
-.link:hover {
+.link:hover,
+.link:active {
   background-color: var(--color);
   color: var(--bg);
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+#unique_link {
+  width: 100%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
 
 #first_link {
@@ -787,6 +807,15 @@ img {
 
 #second_link {
   border-left: 1px var(--color) solid;
+  border-bottom-right-radius: 15px;
+}
+
+#middle_link {
+  border-left: 1px var(--color) solid;
+  border-right: 1px var(--color) solid;
+}
+
+#third_link {
   border-bottom-right-radius: 15px;
 }
 
@@ -849,7 +878,6 @@ img {
   .image {
     grid-column: span 2 / auto;
     margin: 0;
-    /* text-align: center; */
   }
 
   .keywords_items {
@@ -867,10 +895,6 @@ img {
   .description_text {
     font-size: 1.25rem;
     line-height: 1.25rem;
-  }
-
-  .partner_link {
-    font-weight: 200;
   }
 }
 
@@ -913,22 +937,6 @@ img {
     width: calc(400px - 2rem);
   }
 
-  .next_project_chevron {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: scale(0.5) rotate(-90deg);
-    -webkit-transform: scale(0.5) rotate(-90deg);
-  }
-
-  .before_project_chevron {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: scale(0.5) rotate(90deg);
-    -webkit-transform: scale(0.5) rotate(90deg);
-  }
-
   .project_details {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -940,7 +948,6 @@ img {
   .image {
     grid-column: span 2 / auto;
     margin: 0;
-    /* text-align: center; */
   }
 
   .keywords_items {
@@ -1015,7 +1022,6 @@ img {
   .image {
     grid-column: span 2 / auto;
     margin: 0;
-    /* text-align: center; */
   }
 }
 
@@ -1031,8 +1037,6 @@ img {
 
   .header_card {
     width: 792.5px;
-    color: var(--bg);
-    background-color: var(--color);
   }
 
   .keywords,
@@ -1074,8 +1078,6 @@ img {
 
   .header_card {
     width: 892.5px;
-    color: var(--bg);
-    background-color: var(--color);
   }
 
   .keywords,

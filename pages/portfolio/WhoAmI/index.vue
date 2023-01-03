@@ -40,7 +40,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.lapetitehalle.com/"
           >La&nbsp;Petite&nbsp;Halle</a
         >
         (jazz, world music) and
@@ -48,7 +48,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://larotondestalingrad.com/"
           >La&nbsp;Rotonde</a
         >
         (electronic music).
@@ -69,7 +69,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://openclassrooms.com/fr/"
           >OpenClassrooms</a
         >
         python courses and Harvard’s
@@ -77,7 +77,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0"
           >CS50</a
         >
         (Introduction to Computer Science) and then I attended intensive courses
@@ -86,21 +86,21 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.epitech.eu/"
           >Epitech</a
         >
         engineer school (<a
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.coding-academy.fr/code-go-specialisation/"
           >Dev/Code&nbsp;&amp;&nbsp;Go</a
         >). Followed by an internship in
         <a
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.rendr.fr/"
           >Rendr</a
         >
         entreprise as full stack web developer.
@@ -113,7 +113,7 @@
       </div>
       <div id="bio_conclu" class="bio_text js-scroll slide-left">
         I’m now fully dedicated to programming and looking for web development
-        freelance missions either teleworking or in the Paris area.
+        freelance missions either teleworking or in Paris area.
       </div>
     </div>
 
@@ -149,7 +149,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.lapetitehalle.com/"
           >La&nbsp;Petite&nbsp;Halle</a
         >
         de la Villette (jazz, musique du monde) et
@@ -157,7 +157,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://larotondestalingrad.com/"
           >La&nbsp;Rotonde</a
         >
         de Stalingrad (musiques électroniques).
@@ -178,7 +178,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://openclassrooms.com/fr/"
           >OpenClassrooms</a
         >
         (Python) et de
@@ -186,7 +186,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0"
           >Harvard</a
         >
         (CS50: Introduction to Computer Science) puis avec la formation
@@ -202,14 +202,14 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.coding-academy.fr/code-go-specialisation/"
           >Dev/Code&nbsp;&amp;&nbsp;Go</a
         >) suivi d’un stage à
         <a
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.rendr.fr/"
           >Rendr</a
         >
         en tant que dévelopeur web full stack.
@@ -232,7 +232,7 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="#"
+          href="https://github.com/ulysse-lacour/"
           >Github</a
         >
         <a
@@ -248,7 +248,7 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="#"
+          href="https://www.linkedin.com/in/ulysse-lacour-4aa0a4a5/"
           >Linkedin</a
         >
       </div>
@@ -298,6 +298,7 @@ export default {
 }
 
 .partner_link {
+  font-weight: 200;
   text-decoration: none;
   position: relative;
 }
@@ -314,7 +315,8 @@ export default {
   transition: transform 0.2s;
 }
 
-.partner_link:hover::before {
+.partner_link:hover::before,
+.partner_link:active::before {
   transform-origin: 0 0;
   transform: scaleX(1);
   transition: transform 0.4s;
@@ -339,16 +341,18 @@ export default {
   display: none;
 }
 
-.double_word:hover .yes {
+.double_word:hover .yes,
+.double_word:active .yes {
   display: none;
 }
 
-.double_word:hover .no {
+.double_word:hover .no,
+.double_word:active .no {
   display: inline;
 }
 
 .links {
-  width: 60vw;
+  width: 75vw;
   margin-top: 3rem;
   border: 1px var(--color) solid;
   border-radius: 30px;
@@ -376,7 +380,8 @@ export default {
   text-align: center;
 }
 
-.link:hover {
+.link:hover,
+.link:active {
   background-color: var(--color);
   color: var(--bg);
   -webkit-transition: 0.5s;
@@ -407,8 +412,14 @@ export default {
 }
 
 @media only screen and (max-width: 440px) {
-  .partner_link {
-    font-weight: 200;
+  .link {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 440px) and (max-width: 640px) {
+  .link {
+    font-size: 1.5rem;
   }
 }
 </style>

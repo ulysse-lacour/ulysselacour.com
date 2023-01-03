@@ -46,7 +46,7 @@
         target="_blank"
         rel="noopener noreferrer"
         href="https://naomiprostkasbi.com/"
-        >Naomi&nbsp;Prost&#x2011;Kasbi</a
+        >Naomi&nbsp;Prost-Kasbi</a
       >.
     </h4>
   </section>
@@ -76,6 +76,7 @@ export default {}
 }
 
 .partner_link {
+  font-weight: 200;
   text-decoration: none;
   position: relative;
 }
@@ -92,15 +93,10 @@ export default {}
   transition: transform 0.2s;
 }
 
-.partner_link:hover::before {
+.partner_link:hover::before,
+.partner_link:active::before {
   transform-origin: 0 0;
   transform: scaleX(1);
   transition: transform 0.4s;
-}
-
-@media only screen and (max-width: 440px) {
-  .partner_link {
-    font-weight: 200;
-  }
 }
 </style>

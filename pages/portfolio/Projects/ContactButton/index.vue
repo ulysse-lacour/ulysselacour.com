@@ -55,5 +55,6 @@ export default {}
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
+  background-color: var(--bg);
 }
 </style>

@@ -35,14 +35,16 @@ export default {
       animateLetters
         .to(nameLetters, {
           scale: 1.2,
-          ease: 'power1.out'
+          ease: 'power1.out',
+          duration: 0.25
         })
         .to(
           nameLetters,
           {
             x: 'random(-2, 2)',
             y: 'random(-5, 5)',
-            ease: 'none'
+            ease: 'none',
+            duration: 0.35
           },
           '<'
         )

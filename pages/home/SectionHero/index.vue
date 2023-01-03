@@ -27,6 +27,15 @@ export default {
 </script>
 
 <style scoped>
+section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
 #center_element {
   position: relative;
   display: flex;

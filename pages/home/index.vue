@@ -21,8 +21,8 @@
       <span style="font-family: 'Typefesse-full'"></span>
     </div>
     <!-- Homepage -->
-    <Params />
     <div class="page_container">
+      <Params />
       <SectionHero />
     </div>
   </main>
@@ -51,21 +51,24 @@ export default {
     }
   },
 
-  mounted() {},
+  mounted() {
+    this.getLanguage()
+  },
 
   beforeDestroy() {},
 
-  methods: {}
+  methods: {
+    getLanguage() {
+      let languageStored = localStorage.getItem('language')
+      if (languageStored == null) languageStored = 'english'
+      this.$store.commit('language/ChangeLanguage', languageStored)
+    }
+  }
 }
 </script>
 
 <style scoped>
-section {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+.page_container {
+  overflow-x: hidden;
 }
 </style>

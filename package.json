@@ -3,10 +3,17 @@
   "version": "1.0.0",
   "description": "Ulysse Lacour website/portfolio",
   "author": "Ulysse Lacour",
-  "license": "MIT",
+  "license": "GNU",
   "homepage": "ulysselacour.com",
   "keywords": [
-    "keywords"
+    "Ulysse",
+    "Lacour",
+    "Ulysse Lacour",
+    "portfolio",
+    "website",
+    "Developer",
+    "Full stack",
+    "Web"
   ],
   "scripts": {
     "dev": "nuxt",
@@ -20,6 +27,7 @@
     "@nuxtjs/robots": "^2.5.0",
     "@nuxtjs/sitemap": "^2.4.0",
     "nuxt": "^2.15.8",
+    "seamless-scroll-polyfill": "^2.2.0",
     "vue-template-compiler": "^2.7.14"
   },
   "devDependencies": {
@@ -30,7 +38,6 @@
     "autoprefixer": "^10.4.7",
     "eslint": "^8.18.0",
     "eslint-config-prettier": "^8.5.0",
-    "locomotive-scroll": "^4.1.4",
     "nuxt-font-loader": "^1.1.5",
     "nuxt-gsap-module": "^1.7.1",
     "nuxt-lazysizes": "^1.4.2",

@@ -10,9 +10,9 @@ const routes = [
     component: 'pages/portfolio/index.vue'
   },
   {
-    name: 'contact',
-    path: '/contact',
-    component: 'pages/contact/index.vue'
+    name: 'soon',
+    path: '/soon',
+    component: 'pages/underConstruction/index.vue'
   }
 ]
 

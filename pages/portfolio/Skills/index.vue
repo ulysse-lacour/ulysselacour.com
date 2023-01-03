@@ -228,7 +228,8 @@ section {
   transition: 0.25s;
 }
 
-.skill_card:hover {
+.skill_card:hover,
+.skill_card:active {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   transition: 0.25s;

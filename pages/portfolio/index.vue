@@ -26,10 +26,10 @@
       <Projects />
       <WhoAmI />
 
-      <section>
+      <!-- <section>
         <h1 v-if="$store.state.language.chosenLanguage == 'english'">BONUS</h1>
         <h1 v-if="$store.state.language.chosenLanguage == 'french'">BONUS</h1>
-      </section>
+      </section> -->
     </div>
   </main>
 </template>
@@ -64,12 +64,18 @@ export default {
   },
 
   mounted() {
+    this.getLanguage()
     this.AppearOnScroll()
   },
 
   beforeDestroy() {},
 
   methods: {
+    getLanguage() {
+      let languageStored = localStorage.getItem('language')
+      if (languageStored == null) languageStored = 'english'
+      this.$store.commit('language/ChangeLanguage', languageStored)
+    },
     showDetails(event) {
       const chevron = event.currentTarget.querySelector('a')
       const skills =
@@ -157,6 +163,10 @@ export default {
 </script>
 
 <style scoped>
+.page_container {
+  overflow-x: hidden;
+}
+
 section {
   min-height: 100vh;
   width: 100vw;
@@ -165,73 +175,4 @@ section {
   flex-direction: column;
   align-items: center;
 }
-/* .title {
-  text-align: center;
-}
-
-.skills {
-  font-family: 'Outfit';
-  width: 90vw;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  gap: 2rem;
-  justify-content: space-evenly;
-}
-
-.skill_card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 350px;
-  text-align: center;
-  transition: 0.25s;
-}
-
-#python_header {
-  width: 200px;
-  cursor: pointer;
-}
-#js_header {
-  width: 220px;
-  cursor: pointer;
-}
-#web_header {
-  width: 250px;
-  cursor: pointer;
-}
-#sql_header {
-  width: 150px;
-  cursor: pointer;
-}
-
-.skill_header {
-  font-weight: 400;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 300px;
-  position: relative;
-}
-
-.skills_list {
-  height: 75px;
-  opacity: 0;
-  font-weight: 100;
-  font-size: 1.5rem;
-  line-height: 1.5rem;
-  -webkit-transform: scaleY(0);
-  transform: scaleY(0);
-  -webkit-transform-origin: top;
-  transform-origin: top;
-}
-
-@media only screen and (max-width: 640px) {
-}
-
-@media (min-width: 640px) and (max-width: 1024px) {
-} */
 </style>
