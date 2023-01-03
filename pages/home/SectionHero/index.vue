@@ -1,7 +1,9 @@
 <template>
   <section>
-    <Name />
-    <Drawing />
+    <div id="center_element">
+      <Name />
+      <Drawing />
+    </div>
     <EnterButton />
   </section>
 </template>
@@ -24,4 +26,35 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+section {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+#center_element {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  max-height: 80vh;
+  width: 80vw;
+}
+
+@media screen and (max-width: 640px) {
+  #center_element {
+    width: 95vw;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1024px) {
+  #center_element {
+    width: 90vw;
+  }
+}
+</style>

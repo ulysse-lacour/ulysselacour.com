@@ -25,7 +25,13 @@ export default {
 
   watch: ['~/config/*', '~/tailwind.config.js'],
 
-  modules: ['@nuxtjs/pwa', '@nuxtjs/svg', '@nuxtjs/robots', '@nuxtjs/sitemap'],
+  modules: [
+    '@nuxtjs/pwa',
+    '@nuxtjs/svg',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
+    '@nuxtjs/color-mode'
+  ],
 
   buildModules: [
     '@nuxt/postcss8',
@@ -35,8 +41,6 @@ export default {
   ],
 
   css: ['~/assets/styles/main.css'],
-
-  plugins: ['~/plugins/locomotiveScroll.client.js'],
 
   layoutTransition: {
     name: 'layout',
@@ -107,6 +111,12 @@ export default {
         name: 'robots',
         content:
           'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1'
+      },
+      {
+        hid: 'ahrefs-site-verification',
+        name: 'ahrefs-site-verification',
+        content:
+          'b4992c116d5d9c7e5f2b8d147428875b94ed6c4b5fb81e1a9351952aecf8174c'
       }
     ]
   },
@@ -199,5 +209,9 @@ export default {
 
   fontLoader: {
     url: '/fonts/font-face.css'
+  },
+
+  colorMode: {
+    preference: 'dark' // default value of $colorMode.preference
   }
 }

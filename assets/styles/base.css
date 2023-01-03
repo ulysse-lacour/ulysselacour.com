@@ -1,34 +1,14 @@
-/* Locomotive css */
-html.has-scroll-smooth,
-.has-scroll-smooth body {
-  @apply overflow-hidden;
+/* Resets */
+*,
+::before,
+::a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-html.has-scroll-dragging {
-  @apply select-none;
-}
-
-.has-scroll-smooth [data-scroll-container] {
-  @apply min-h-screen;
-}
-
-[data-scroll-direction='horizontal'] [data-scroll-container] {
-  @apply h-screen inline-block whitespace-nowrap;
-}
-
-[data-scroll-direction='horizontal'] [data-scroll-section] {
-  @apply inline-block align-top whitespace-nowrap h-full;
-}
-
-/* My basic locomotive set up */
-[data-scroll-section] {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  font-size: xx-large;
+html {
+  overflow-x: hidden;
 }
 
 /* Lazyload css */
@@ -41,7 +21,138 @@ html.has-scroll-dragging {
   @apply opacity-100 transition-opacity duration-500;
 }
 
-/* Website css */
-html {
-  @apply bg-dark text-white;
+/* Color-mode css */
+:root {
+  --color: #fdf9f3;
+  --color-primary: #fdf9f3;
+  --color-secondary: #fdf9f3;
+  --bg: #030303;
+  --bg-secondary: #06131e;
+  --border-color: #fdf9f3;
+}
+
+.dark-mode {
+  --color: #fdf9f3;
+  --color-primary: #fdf9f3;
+  --color-secondary: #fdf9f3;
+  --bg: #030303;
+  --bg-secondary: #030303;
+  --border-color: #fdf9f3;
+  --bg-opacity: 0.15;
+  --bg-opacity-transition: 0s;
+}
+
+.light-mode {
+  --color: #030303;
+  --color-primary: #030303;
+  --color-secondary: #030303;
+  --bg: #fde2e4;
+  --bg-secondary: #fdf9f3;
+  --border-color: #fdf9f3;
+  --bg-opacity: 1;
+  --bg-opacity-transition: 1s;
+}
+
+body {
+  position: relative;
+  background-color: var(--bg);
+  color: var(--color);
+  overflow-x: hidden;
+  -webkit-transition: background-color 0.5s, color 0.75s;
+  -moz-transition: background-color 0.5s, color 0.75s;
+  -ms-transition: background-color 0.5s, color 0.75s;
+  -o-transition: background-color 0.5s, color 0.75s;
+  transition: background-color 0.5s, color 0.75s;
+}
+
+/* Grain effect */
+.page_container:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100vw;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url('/images/grain.png');
+  opacity: var(--bg-opacity);
+  -webkit-transition: opacity var(--bg-opacity-transition);
+  -moz-transition: opacity var(--bg-opacity-transition);
+  -ms-transition: opacity var(--bg-opacity-transition);
+  -o-transition: opacity var(--bg-opacity-transition);
+  transition: opacity var(--bg-opacity-transition);
+}
+
+/* Scroll CSS  */
+.js-scroll {
+  opacity: 0;
+  -webkit-transition: opacity 500ms;
+  -moz-transition: opacity 500ms;
+  -ms-transition: opacity 500ms;
+  -o-transition: opacity 500ms;
+  transition: opacity 500ms;
+}
+
+.js-scroll.scrolled {
+  opacity: 1;
+}
+
+.scrolled.slide-left {
+  animation: slide-in-left 1s ease-in-out both;
+}
+
+.scrolled.slide-right {
+  animation: slide-in-right 1s ease-in-out both;
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-10vw);
+    transform: translateX(-10vw);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-in-right {
+  0% {
+    -webkit-transform: translateX(10vw);
+    transform: translateX(10vw);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .js-scroll {
+    opacity: 1;
+  }
+
+  .scrolled {
+    animation: none !important;
+  }
+}
+
+/* Safari specific */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    body {
+      -webkit-transition: 0s;
+      transition: 0s;
+    }
+
+    /* Grain effect */
+    .page_container:after {
+      -webkit-transition: 0s;
+      transition: 0s;
+    }
+  }
 }

@@ -78,16 +78,25 @@ export default {
 
     Transition() {
       const drawing = document.querySelector('.svg_container')
+      const body = document.querySelector('.body_path')
+      const eye = document.querySelector('#svg_eye')
+      const eyeClosed = document.querySelector('#svg_eye_closed')
       const name = document.querySelector('.name')
       const nameLetters = document.querySelectorAll('.name_letter')
       const enterButton = document.querySelector('.enterButton')
-      const parameters = document.querySelector('.parameters')
+      const parameters = document.querySelector('.params_items')
 
       const nexPage = function () {
-        this.$router.push('/contact')
+        this.$router.push('/portfolio')
       }.bind(this)
 
-      this.$gsap.to([enterButton, parameters, drawing], {
+      body.classList.remove('body_path')
+      body.classList.add('erase_path')
+      this.$gsap.to([eye], {
+        opacity: 0,
+        duration: 0.1
+      })
+      this.$gsap.to([enterButton, parameters], {
         opacity: 0,
         duration: 0.5,
         ease: 'power1.out'
@@ -103,7 +112,12 @@ export default {
         y: 'random(-5, 5)',
         ease: 'power1.out'
       })
-      this.$gsap.to([name], {
+      this.$gsap.to([eyeClosed], {
+        opacity: 0,
+        delay: 0.5,
+        duration: 0.1
+      })
+      this.$gsap.to([name, drawing], {
         opacity: 0,
         delay: 1,
         duration: 0.5,
@@ -117,35 +131,21 @@ export default {
 
 <style scoped>
 .enterButton {
-  position: absolute;
-  bottom: 0%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   display: flex;
   justify-content: center;
   width: 7rem;
   padding: 0.4rem 4rem;
+  margin-top: 2rem;
   margin-bottom: 2rem;
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;
   line-height: 1.5rem;
-  border: 1px white solid;
+  border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
-}
-
-@media screen and (max-width: 640px) {
-  .enterButton {
-    margin-bottom: 6rem;
-  }
-}
-
-@media (min-width: 640px) and (max-width: 1024px) {
-  .enterButton {
-    margin-bottom: 4rem;
-  }
+  background-color: var(--bg);
 }
 </style>
