@@ -25,11 +25,8 @@
       <Skills />
       <Projects />
       <WhoAmI />
-
-      <!-- <section>
-        <h1 v-if="$store.state.language.chosenLanguage == 'english'">BONUS</h1>
-        <h1 v-if="$store.state.language.chosenLanguage == 'french'">BONUS</h1>
-      </section> -->
+      <Illustration />
+      <Bonus />
     </div>
   </main>
 </template>
@@ -39,13 +36,17 @@ import Params from './Params/index.vue'
 import Skills from './Skills/index.vue'
 import Projects from './Projects/index.vue'
 import WhoAmI from './WhoAmI/index.vue'
+import Illustration from './Illustration/index.vue'
+import Bonus from './Bonus/index.vue'
 
 export default {
   components: {
     Params,
     Skills,
     Projects,
-    WhoAmI
+    WhoAmI,
+    Illustration,
+    Bonus
   },
 
   head() {

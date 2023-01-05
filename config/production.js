@@ -1,11 +1,11 @@
 export default {
   server: {
     hostname: 'localhost',
-    port: '8008'
+    port: '8888'
   },
 
   app: {
-    baseUrl: 'APP URL',
-    url: 'APP URL'
+    baseUrl: 'https://ulysselacour.com',
+    url: 'https://ulysselacour.com'
   }
 }

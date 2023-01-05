@@ -354,6 +354,7 @@ export default {
 .links {
   width: 75vw;
   margin-top: 3rem;
+  margin-bottom: 6rem;
   border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
