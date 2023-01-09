@@ -71,6 +71,10 @@ h1 {
   font-family: 'Director';
   font-size: 3rem;
   line-height: 2rem;
+  -webkit-transition: font-size 0.5s;
+  -moz-transition: font-size 0.5s;
+  -ms-transition: font-size 0.5s;
+  -o-transition: font-size 0.5s;
   transition: font-size 0.5s;
   cursor: default;
 }

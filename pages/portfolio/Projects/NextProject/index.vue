@@ -99,7 +99,7 @@ export default {
 
 .next_project_chevron {
   position: absolute;
-  left: 1000px;
+  left: 80vw;
   top: 50%;
   transform: translate(0, -50%) scale(0.75) rotate(-90deg);
   -webkit-transform: translate(0, -50%) scale(0.75) rotate(-90deg);

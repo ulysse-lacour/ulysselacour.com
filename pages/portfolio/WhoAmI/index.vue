@@ -298,6 +298,7 @@ export default {
 }
 
 .partner_link {
+  display: inline-block;
   font-weight: 200;
   text-decoration: none;
   position: relative;
@@ -310,6 +311,7 @@ export default {
   height: 1px;
   bottom: 0;
   background: var(--color);
+  -webkit-transform-origin: 100% 0;
   transform-origin: 100% 0;
   transform: scaleX(0);
   transition: transform 0.2s;
@@ -317,6 +319,7 @@ export default {
 
 .partner_link:hover::before,
 .partner_link:active::before {
+  -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
   transform: scaleX(1);
   transition: transform 0.4s;

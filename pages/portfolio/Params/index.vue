@@ -180,7 +180,9 @@ export default {
         this.$store.commit('language/ChangeLanguage', 'french')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
+          this.$root.$refs.ContactButton.buttonAnimation()
+          this.$root.$refs.JoinButton.buttonAnimation()
+          this.$root.$refs.ContactButton.titleAnimation()
         })
       })
       english.addEventListener('click', () => {
@@ -194,7 +196,9 @@ export default {
         this.$store.commit('language/ChangeLanguage', 'english')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
+          this.$root.$refs.ContactButton.buttonAnimation()
+          this.$root.$refs.JoinButton.buttonAnimation()
+          this.$root.$refs.ContactButton.titleAnimation()
         })
       })
     },

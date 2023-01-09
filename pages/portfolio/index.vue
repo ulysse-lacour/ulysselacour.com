@@ -76,6 +76,11 @@ export default {
       let languageStored = localStorage.getItem('language')
       if (languageStored == null) languageStored = 'english'
       this.$store.commit('language/ChangeLanguage', languageStored)
+      this.$nextTick(() => {
+        this.$root.$refs.ContactButton.buttonAnimation()
+        this.$root.$refs.JoinButton.buttonAnimation()
+        this.$root.$refs.ContactButton.titleAnimation()
+      })
     },
     showDetails(event) {
       const chevron = event.currentTarget.querySelector('a')
@@ -169,6 +174,7 @@ export default {
 }
 
 section {
+  background-color: transparent;
   min-height: 100vh;
   width: 100vw;
   display: flex;

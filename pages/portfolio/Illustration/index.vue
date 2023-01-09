@@ -55,6 +55,7 @@ export default {
 
 <style scoped>
 section {
+  background-color: transparent;
   min-height: 101vh;
   width: 100vw;
   display: flex;

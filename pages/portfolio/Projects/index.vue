@@ -46,9 +46,11 @@
                 |
                 <h3 class="keyword">OAuth2</h3>
                 |
-                <h3 class="keyword">Webpack</h3>
-                |
                 <h3 class="keyword">Tailwind</h3>
+                |
+                <h3 class="keyword">Nginx</h3>
+                |
+                <h3 class="keyword">PM2</h3>
               </div>
             </div>
             <div class="description">
@@ -57,18 +59,48 @@
                 class="description_text"
               >
                 My passion for music and creating playlists led me to create
-                this project. Jolify is a web application allowing users to
-                visualise and share their Spotify playlists jolified. Currently
-                still in beta version it will soon be possible to create
-                collaborative playlists and share them in community space.
+                this project.
+                <a
+                  class="partner_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://jolify.ulysselacour.com/"
+                  >Jolify</a
+                >
+                is a web application allowing users to visualise and share their
+                <a
+                  class="partner_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://developer.spotify.com/"
+                  >Spotify</a
+                >
+                playlists jolified. Currently still in beta version it will soon
+                be possible to create collaborative playlists and share them in
+                community space.
               </div>
               <div
                 v-if="$store.state.language.chosenLanguage == 'french'"
                 class="description_text"
               >
                 Ce projet est né de mon amour pour la musique et la création de
-                playlists. Jolify est une application web permettant aux
-                utilisateurs de visualiser et partager leurs playlists Spotify
+                playlists.
+                <a
+                  class="partner_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://jolify.ulysselacour.com/"
+                  >Jolify</a
+                >
+                est une application web permettant aux utilisateurs de
+                visualiser et partager leurs playlists
+                <a
+                  class="partner_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href="https://developer.spotify.com/"
+                  >Spotify</a
+                >
                 sous une forme jolifiée. Encore en version beta il y sera
                 bientôt possible de créer des playlists collaboratives et de les
                 partager au sein d’un espace communautaire.
@@ -77,10 +109,12 @@
             <figure class="image">
               <picture>
                 <img
-                  data-src="/images/Jolify.png"
+                  data-src="/images/Jolify1.png"
+                  data-idx="1"
                   class="lazyload"
                   alt="Ulysse Lacour website"
                   draggable="false"
+                  @click="NextImage('Jolify', $event)"
                 />
               </picture>
             </figure>
@@ -140,6 +174,8 @@
                 <h3 class="keyword">AJAX</h3>
                 |
                 <h3 class="keyword">Pillow</h3>
+                |
+                <h3 class="keyword">Nginx</h3>
               </div>
             </div>
             <div class="description">
@@ -199,10 +235,12 @@
             <figure class="image">
               <picture>
                 <img
-                  data-src="/images/Homeworks.png"
+                  data-src="/images/Homeworks1.png"
+                  data-idx="1"
                   class="lazyload"
                   alt="Ulysse Lacour website"
                   draggable="false"
+                  @click="NextImage('Homeworks', $event)"
                 />
               </picture>
             </figure>
@@ -354,10 +392,12 @@
             <figure class="image">
               <picture>
                 <img
-                  data-src="/images/placeholder.jpg"
+                  data-src="/images/Cultplace1.png"
+                  data-idx="1"
                   class="lazyload"
                   alt="Ulysse Lacour website"
                   draggable="false"
+                  @click="NextImage('Cultplace', $event)"
                 />
               </picture>
             </figure>
@@ -371,8 +411,15 @@
                   href="#"
                   >Site</a
                 >
+                <button
+                  id="middle_link"
+                  class="link"
+                  @click="ShowVideo('CULTPLACE.APP', $event)"
+                >
+                  Video
+                </button>
                 <a
-                  id="second_link"
+                  id="third_link"
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
@@ -460,10 +507,12 @@
             <figure class="image">
               <picture>
                 <img
-                  data-src="/images/Nao.png"
+                  data-src="/images/Nao1.png"
+                  data-idx="1"
                   class="lazyload"
                   alt="Ulysse Lacour website"
                   draggable="false"
+                  @click="NextImage('Nao', $event)"
                 />
               </picture>
             </figure>
@@ -514,7 +563,11 @@ export default {
   },
 
   mounted() {
-    this.contactButtonAnimation()
+    this.buttonAnimation()
+  },
+
+  created() {
+    this.$root.$refs.JoinButton = this
   },
 
   methods: {
@@ -522,7 +575,7 @@ export default {
       this.showModal = true
       this.chosenModal = video
     },
-    contactButtonAnimation() {
+    buttonAnimation() {
       const partners = document.querySelector('.partners')
       const contactButton = partners.querySelector('#contact')
       const letters = partners.querySelectorAll('.contact_letter')
@@ -541,6 +594,17 @@ export default {
 
       contactButton.addEventListener('mouseenter', () => displayQ.play(0))
       contactButton.addEventListener('mouseleave', () => hideQ.play(0))
+    },
+    NextImage(project, event) {
+      const projectClicked = event.target
+      const projectName = project
+      let index = projectClicked.dataset.idx
+
+      if (index >= 3) index = 1
+      else index++
+
+      projectClicked.src = `/images/${projectName}${index}.png`
+      projectClicked.dataset.idx = index
     }
   }
 }
@@ -571,12 +635,17 @@ export default {
 }
 
 section {
+  background-color: transparent;
   /* position: relative; */
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   align-items: center;
   width: 95vw;
+}
+
+img {
+  cursor: pointer;
 }
 
 #intro {
@@ -594,7 +663,7 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 1000px;
+  width: 80vw;
   border: 1px var(--color) solid;
   border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -609,13 +678,14 @@ section {
   align-items: center;
   justify-content: center;
   height: 80px;
+  width: 100%;
 }
 
 .header_card {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 992.5px;
+  width: 100%;
   height: 75px;
   border-top-left-radius: 12.5px;
   border-top-right-radius: 12.5px;
@@ -637,8 +707,7 @@ section {
 .project_details {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  width: 90vw;
-  max-width: 1000px;
+  width: 100%;
   font-family: 'Outfit';
   font-weight: 300;
   font-size: 1.5rem;
@@ -658,7 +727,7 @@ section {
 .keywords,
 .links {
   grid-column: span 2 / auto;
-  width: 1000px;
+  width: 100%;
   text-align: center;
 }
 
@@ -667,8 +736,8 @@ section {
 }
 
 .description {
-  width: 500px;
-  border-left: 1px var(--color) solid;
+  width: 100%;
+  /* border-left: 1px var(--color) solid; */
   border-top: 1px var(--color) solid;
   border-bottom: 1px var(--color) solid;
   font-weight: 100;
@@ -714,12 +783,32 @@ img {
 }
 
 .image {
-  width: 500px;
-  border: 1px var(--color) solid;
+  width: 100%;
+  border-left: 1px var(--color) solid;
+  border-top: 1px var(--color) solid;
+  border-bottom: 1px var(--color) solid;
 }
 
 img {
-  width: calc(500px - 2rem);
+  width: calc(40vw - 2rem);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
+}
+
+img:hover {
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  -o-transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+  transform: scale(1.02);
+  -moz-transition: -moz-transform 0.25s;
+  -ms-transition: -ms-transform 0.25s;
+  -o-transition: -o-transform 0.25s;
+  -webkit-transition: -webkit-transform 0.25s;
+  transition: transform 0.25s;
 }
 
 .keywords_items {
@@ -730,6 +819,7 @@ img {
   font-weight: 100;
   font-size: 1rem;
   line-height: 0.5rem;
+  cursor: default;
 }
 
 .keyword {
@@ -738,18 +828,10 @@ img {
   line-height: 1.5rem;
   padding: 0.2rem 0.5rem;
   margin: 0.2rem 0.5rem;
-  transition: 0.25s;
-  /* cursor: default; */
-}
-
-.keyword:hover,
-.keyword:active {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  transition: 0.25s;
 }
 
 .partner_link {
+  display: inline-block;
   font-weight: 200;
   text-decoration: none;
   position: relative;
@@ -762,15 +844,27 @@ img {
   height: 1px;
   bottom: 0;
   background: var(--color);
+  -webkit-transform-origin: 100% 0;
   transform-origin: 100% 0;
+  -webkit-transform: scaleX(0);
   transform: scaleX(0);
+  -webkit-transition: -webkit-transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
   transition: transform 0.2s;
 }
 
 .partner_link:hover::before,
 .partner_link:active::before {
+  -webkit-transform-origin: 0 0;
   transform-origin: 0 0;
+  -webkit-transform: scaleX(1);
   transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.4s;
+  -moz-transition: transform 0.4s;
+  -ms-transition: transform 0.4s;
+  -o-transition: transform 0.4s;
   transition: transform 0.4s;
 }
 
@@ -784,6 +878,9 @@ img {
   padding: 1rem;
   line-height: 1.5rem;
   -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
   transition: 0.25s;
 }
 
@@ -791,8 +888,11 @@ img {
 .link:active {
   background-color: var(--color);
   color: var(--bg);
-  -webkit-transition: 0.5s;
-  transition: 0.5s;
+  -webkit-transition: 0.25s;
+  -moz-transition: 0.25s;
+  -ms-transition: 0.25s;
+  -o-transition: 0.25s;
+  transition: 0.25s;
 }
 
 #unique_link {

@@ -1,23 +1,43 @@
 <template>
   <main>
-    <section>
+    <!-- Preload fonts -->
+    <div
+      class="font_preload"
+      style="
+        opacity: 0;
+        user-select: none;
+        pointer-events: none;
+        position: absolute;
+        top: 0;
+        -webkit-transform: translateY(-100%);
+        transform: translateY(-100%);
+      "
+      role="none presentation"
+    >
+      <span style="font-family: 'I'"></span>
+      <span style="font-family: 'Outfit'"></span>
+      <span style="font-family: 'Director'"></span>
+      <span style="font-family: 'Typefesse'"></span>
+      <span style="font-family: 'Typefesse-full'"></span>
+    </div>
+    <section class="page_container">
       <div class="errorStatusCode">
-        <h1
+        <div
           v-for="(char, index) in JSON.stringify(error.statusCode)"
           :key="index"
           class="error_number"
         >
           {{ char }}
-        </h1>
+        </div>
       </div>
       <div class="errorMessage">
-        <h1
+        <div
           v-for="(char, index) in JSON.stringify(error.message, null, ' ')"
           :key="index"
           class="error_letter"
         >
           {{ char != ' ' ? char : '&nbsp;' }}
-        </h1>
+        </div>
       </div>
 
       <button class="homeButton" @click="$router.push('/')">
@@ -87,7 +107,8 @@ export default {
 
 <style scoped>
 section {
-  height: 100vh;
+  background-color: transparent;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -105,6 +126,7 @@ section {
 
 .error_number:hover {
   font-family: 'Typefesse-full';
+  cursor: default;
 }
 
 .errorMessage {
@@ -120,6 +142,7 @@ section {
 
 .error_letter {
   opacity: 0;
+  cursor: default;
 }
 
 .homeButton {
@@ -129,22 +152,12 @@ section {
   line-height: 1.5rem;
   width: 7rem;
   padding: 0.4rem 4rem;
-  border: 1px white solid;
+  border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;
   -moz-border-radius: 30px;
   -khtml-border-radius: 30px;
   display: flex;
   justify-content: center;
-}
-
-/* SAFARI SPECIFIC RULES */
-@media not all and (min-resolution: 0.001dpcm) {
-  @supports (-webkit-appearance: none) {
-    .link {
-      outline: 0px;
-      border: 1px white solid;
-    }
-  }
 }
 </style>
