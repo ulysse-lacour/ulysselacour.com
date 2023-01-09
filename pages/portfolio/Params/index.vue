@@ -180,7 +180,9 @@ export default {
         this.$store.commit('language/ChangeLanguage', 'french')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
+          this.$root.$refs.ContactButton.buttonAnimation()
+          this.$root.$refs.JoinButton.buttonAnimation()
+          this.$root.$refs.ContactButton.titleAnimation()
         })
       })
       english.addEventListener('click', () => {
@@ -194,7 +196,9 @@ export default {
         this.$store.commit('language/ChangeLanguage', 'english')
         setTimeout(this.HideParams, 500)
         this.$nextTick(() => {
-          this.$root.$refs.ContactButton.buttonAndTitleAnimation()
+          this.$root.$refs.ContactButton.buttonAnimation()
+          this.$root.$refs.JoinButton.buttonAnimation()
+          this.$root.$refs.ContactButton.titleAnimation()
         })
       })
     },
@@ -293,19 +297,6 @@ export default {
   height: 1.25rem;
   stroke: var(--color);
   fill: var(--color);
-  -moz-transition: -moz-transform 0.25s;
-  -ms-transition: -ms-transform 0.25s;
-  -o-transition: -o-transform 0.25s;
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: transform 0.25s;
-}
-
-.dark_or_light:hover {
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
   -moz-transition: -moz-transform 0.25s;
   -ms-transition: -ms-transform 0.25s;
   -o-transition: -o-transform 0.25s;

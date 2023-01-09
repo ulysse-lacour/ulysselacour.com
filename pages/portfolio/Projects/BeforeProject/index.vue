@@ -88,18 +88,24 @@ export default {
   justify-content: center;
   opacity: 0.35;
   -webkit-transition: opacity 0.25s;
+  -moz-transition: opacity 0.25s;
+  -ms-transition: opacity 0.25s;
+  -o-transition: opacity 0.25s;
   transition: opacity 0.25s;
 }
 
 .project_chevron:hover {
   opacity: 1;
   -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
   transition: opacity 0.5s;
 }
 
 .before_project_chevron {
   position: absolute;
-  right: 1000px;
+  right: 80vw;
   top: 50%;
   transform: translate(0, -50%) scale(0.75) rotate(90deg);
   -webkit-transform: translate(0, -50%) scale(0.75) rotate(90deg);

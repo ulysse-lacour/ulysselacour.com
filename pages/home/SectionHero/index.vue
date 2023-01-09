@@ -28,6 +28,7 @@ export default {
 
 <style scoped>
 section {
+  background-color: transparent;
   height: 100vh;
   width: 100vw;
   display: flex;

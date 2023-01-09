@@ -48,8 +48,8 @@ export default {
       nameLetters.addEventListener('animationend', () => {
         this.$gsap.from(letters, {
           y: 5,
-          duration: 1,
-          stagger: 0.025,
+          duration: 1.5,
+          stagger: 0.05,
           ease: 'elastic.out',
           initButtonAnimation
         })

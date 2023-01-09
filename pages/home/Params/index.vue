@@ -158,19 +158,6 @@ export default {
   transition: transform 0.25s;
 }
 
-.dark_or_light:hover {
-  -moz-transform: scale(1.1);
-  -ms-transform: scale(1.1);
-  -o-transform: scale(1.1);
-  -webkit-transform: scale(1.1);
-  transform: scale(1.1);
-  -moz-transition: -moz-transform 0.25s;
-  -ms-transition: -ms-transform 0.25s;
-  -o-transition: -o-transform 0.25s;
-  -webkit-transition: -webkit-transform 0.25s;
-  transition: transform 0.25s;
-}
-
 .dark_or_light:hover > .sun_and_moon {
   -moz-transform: scale(1.1);
   -ms-transform: scale(1.1);

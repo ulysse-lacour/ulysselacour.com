@@ -15,7 +15,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="python_skills" class="skills_list">
-            Django, Flask & Selenium
+            Django, Flask &#38;&nbsp;Selenium
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -30,7 +30,9 @@
             <h2 style="margin-left: 1.5rem">Javascript</h2>
             <AnimatedChevron />
           </div>
-          <h3 id="js_skills" class="skills_list">Nuxt, Vue, Gsap & jQuery</h3>
+          <h3 id="js_skills" class="skills_list">
+            Nuxt, Vue, jQuery &#38;&nbsp;Gsap
+          </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
           <div class="borderTopRight"></div>
@@ -56,7 +58,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="web_skills" class="skills_list">
-            Nginx, Gunicorn, Node.js, Webpack & PM2
+            Nginx, Gunicorn, Node.js &#38;&nbsp;PM2
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -72,7 +74,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="sql_skills" class="skills_list">
-            GraphQL, PostgreSQL, SQLite, MySQL & SQLAlchemy
+            GraphQL, PostgreSQL, SQLite, MySQL &#38;&nbsp;SQLAlchemy
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -83,7 +85,7 @@
 
       <div id="other_card" class="skill_card">
         <div id="other_header" class="skill_header">
-          <h2>HTML, CSS & Bash</h2>
+          <h2>+ HTML, CSS &#38;&nbsp;Bash</h2>
         </div>
         <!-- <h3 class="skills_list"></h3> -->
         <div class="borderTopLeft"></div>
@@ -108,7 +110,8 @@ export default {
   },
 
   mounted() {
-    this.buttonAndTitleAnimation()
+    this.buttonAnimation()
+    // this.titleAnimation()
   },
 
   created() {
@@ -142,7 +145,7 @@ export default {
         })
       }
     },
-    buttonAndTitleAnimation() {
+    buttonAnimation() {
       // Button animation
       const contactButton = document.querySelector('#contact')
       const letters = document.querySelectorAll('.contact_letter')
@@ -161,8 +164,8 @@ export default {
 
       contactButton.addEventListener('mouseenter', () => displayQ.play(0))
       contactButton.addEventListener('mouseleave', () => hideQ.play(0))
-
-      // Title animation
+    },
+    titleAnimation() {
       const title = document.querySelector('.title')
       this.$gsap.from(title, {
         y: 60,
@@ -176,6 +179,7 @@ export default {
 
 <style scoped>
 section {
+  background-color: transparent;
   min-height: 101vh;
   width: 100vw;
   display: flex;
@@ -190,6 +194,7 @@ section {
   margin-top: 4rem;
   margin-bottom: 6rem;
 }
+
 .title {
   font-family: 'Outfit';
   font-weight: 600;

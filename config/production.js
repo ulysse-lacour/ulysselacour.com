@@ -1,7 +1,7 @@
 export default {
   server: {
     hostname: 'localhost',
-    port: '8008'
+    port: '8888'
   },
 
   app: {
