@@ -133,7 +133,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Jolify-back"
                   >Github</a
                 >
               </div>
@@ -408,8 +408,8 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
-                  >Site</a
+                  href="https://www.notion.so/cultplace-app-0b57d24ad2424260b45ec586fa2f1ea8"
+                  >Notion</a
                 >
                 <button
                   id="middle_link"
@@ -423,7 +423,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Cultplace-app "
                   >Github</a
                 >
               </div>
