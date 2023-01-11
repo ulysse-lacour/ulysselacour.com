@@ -247,7 +247,12 @@ export default {
 
   methods: {
     getLanguage() {
-      const languageStored = localStorage.getItem('language')
+      let languageStored = localStorage.getItem('language')
+      if (languageStored == null) {
+        this.language.slice(0, 2) === 'fr'
+          ? (languageStored = 'french')
+          : (languageStored = 'english')
+      }
       this.$store.commit('language/ChangeLanguage', languageStored)
     }
   }

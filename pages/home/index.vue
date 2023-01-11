@@ -38,6 +38,18 @@ export default {
     SectionHero
   },
 
+  data() {
+    return {
+      language: 'en'
+    }
+  },
+
+  fetch() {
+    if (process.server) {
+      this.language = this.$nuxt.context.req.headers['accept-language']
+    }
+  },
+
   head() {
     return {
       title: this.$config.app.title + this.$config.app.titleSeparator + 'home',
@@ -60,7 +72,11 @@ export default {
   methods: {
     getLanguage() {
       let languageStored = localStorage.getItem('language')
-      if (languageStored == null) languageStored = 'english'
+      if (languageStored == null) {
+        this.language.slice(0, 2) === 'fr'
+          ? (languageStored = 'french')
+          : (languageStored = 'english')
+      }
       this.$store.commit('language/ChangeLanguage', languageStored)
     }
   }

@@ -15,7 +15,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="python_skills" class="skills_list">
-            Django, Flask &#38;&nbsp;Selenium
+            Django, Flask, SQLAlchemy, Graphene &#38;&nbsp;Selenium
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -31,7 +31,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="js_skills" class="skills_list">
-            Nuxt, Vue, jQuery &#38;&nbsp;Gsap
+            Nuxt, Vue, Apollo, Axios, jQuery&nbsp;&#38;&nbsp;Gsap
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -74,7 +74,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="sql_skills" class="skills_list">
-            GraphQL, PostgreSQL, SQLite, MySQL &#38;&nbsp;SQLAlchemy
+            PostgreSQL, SQLite, MariaDB&nbsp;&#38;&nbsp;MySQL
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -314,15 +314,9 @@ section {
   width: 170px;
 }
 
-#python_skills {
-  max-height: 30px;
-}
-#js_skills {
-  max-height: 30px;
-}
-#web_skills {
-  max-height: 60px;
-}
+#python_skills,
+#js_skills,
+#web_skills,
 #sql_skills {
   max-height: 60px;
 }

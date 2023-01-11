@@ -11,7 +11,7 @@
       MY WEBSITES
     </h2>
     <h2 v-if="$store.state.language.chosenLanguage == 'french'" id="intro">
-      MES SITES
+      MES PROJETS
     </h2>
     <div class="projects">
       <section id="jolify">
