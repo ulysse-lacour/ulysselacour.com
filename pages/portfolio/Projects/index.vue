@@ -150,7 +150,9 @@
                 :current-project="'#homeworks'"
                 :go-to-project="'#jolify'"
               />
-              <h2 class="project_title">HOMEWORKS</h2>
+              <h2 class="project_title">
+                HOME<span class="mirror">SKROW</span>
+              </h2>
               <NextProject
                 :is-empty="false"
                 :current-project="'#homeworks'"
@@ -162,6 +164,8 @@
             <div class="keywords">
               <div class="keywords_items">
                 <h3 class="keyword">Flask</h3>
+                |
+                <h3 class="keyword">Jinja</h3>
                 |
                 <h3 class="keyword">PostgreSQL</h3>
                 |
@@ -266,7 +270,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Homeworks"
                   >Github</a
                 >
               </div>
@@ -925,6 +929,14 @@ img:hover {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.mirror {
+  display: inline-block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 /* Responsive */
