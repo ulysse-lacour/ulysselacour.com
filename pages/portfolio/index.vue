@@ -49,6 +49,18 @@ export default {
     Bonus
   },
 
+  data() {
+    return {
+      language: 'en'
+    }
+  },
+
+  fetch() {
+    if (process.server) {
+      this.language = this.$nuxt.context.req.headers['accept-language']
+    }
+  },
+
   head() {
     return {
       title:
@@ -74,7 +86,11 @@ export default {
   methods: {
     getLanguage() {
       let languageStored = localStorage.getItem('language')
-      if (languageStored == null) languageStored = 'english'
+      if (languageStored == null) {
+        this.language.slice(0, 2) === 'fr'
+          ? (languageStored = 'french')
+          : (languageStored = 'english')
+      }
       this.$store.commit('language/ChangeLanguage', languageStored)
       this.$nextTick(() => {
         this.$root.$refs.ContactButton.buttonAnimation()
@@ -170,13 +186,11 @@ export default {
 
 <style scoped>
 .page_container {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 section {
   background-color: transparent;
-  min-height: 100vh;
-  width: 100vw;
   display: flex;
   justify-content: center;
   flex-direction: column;

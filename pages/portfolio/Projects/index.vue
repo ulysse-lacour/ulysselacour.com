@@ -11,7 +11,7 @@
       MY WEBSITES
     </h2>
     <h2 v-if="$store.state.language.chosenLanguage == 'french'" id="intro">
-      MES SITES
+      MES PROJETS
     </h2>
     <div class="projects">
       <section id="jolify">
@@ -133,7 +133,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Jolify-back"
                   >Github</a
                 >
               </div>
@@ -150,7 +150,9 @@
                 :current-project="'#homeworks'"
                 :go-to-project="'#jolify'"
               />
-              <h2 class="project_title">HOMEWORKS</h2>
+              <h2 class="project_title">
+                HOME<span class="mirror">SKROW</span>
+              </h2>
               <NextProject
                 :is-empty="false"
                 :current-project="'#homeworks'"
@@ -162,6 +164,8 @@
             <div class="keywords">
               <div class="keywords_items">
                 <h3 class="keyword">Flask</h3>
+                |
+                <h3 class="keyword">Jinja</h3>
                 |
                 <h3 class="keyword">PostgreSQL</h3>
                 |
@@ -266,7 +270,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Homeworks"
                   >Github</a
                 >
               </div>
@@ -319,7 +323,7 @@
                   class="partner_link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/priandey"
                   >Pierre&nbsp;Riandey</a
                 >, we made a management accounting tool prototype for the
                 restaurant/music venue of
@@ -408,8 +412,8 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
-                  >Site</a
+                  href="https://www.notion.so/cultplace-app-0b57d24ad2424260b45ec586fa2f1ea8"
+                  >Notion</a
                 >
                 <button
                   id="middle_link"
@@ -423,7 +427,7 @@
                   class="link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/ulysse-lacour/Cultplace-app "
                   >Github</a
                 >
               </div>
@@ -572,6 +576,15 @@ export default {
 
   methods: {
     ShowVideo(video, event) {
+      const videoPlayer = document.querySelector('video')
+      videoPlayer.setAttribute('poster', `/images/videoPoster/${video}.png`)
+      const existingSource = videoPlayer.querySelector('source')
+      if (existingSource != null) existingSource.remove()
+      const source = document.createElement('source')
+      source.setAttribute('src', `/videos/${video}.webm`)
+      source.setAttribute('type', 'video/webm')
+      videoPlayer.appendChild(source)
+      videoPlayer.load()
       this.showModal = true
       this.chosenModal = video
     },
@@ -925,6 +938,14 @@ img:hover {
   align-items: center;
   justify-content: center;
   margin-top: 2rem;
+}
+
+.mirror {
+  display: inline-block;
+  -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -moz-transform: matrix(-1, 0, 0, 1, 0, 0);
+  -o-transform: matrix(-1, 0, 0, 1, 0, 0);
+  transform: matrix(-1, 0, 0, 1, 0, 0);
 }
 
 /* Responsive */

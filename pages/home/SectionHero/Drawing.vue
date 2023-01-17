@@ -39,42 +39,36 @@
       />
     </g>
     <g id="svg_eye" class="eye">
-      <!-- top eyelid -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"
         pathLength="1"
         d="M529.73,106.24c-.46-7.02-6.24-12.41-12.37-14.64s-13.09-.41-18.02,3.74c-2.84,2.39-4.84,6-5.59,10.4"
       />
-      <!-- left eyelashe -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"
         pathLength="1"
         d="M500.82,94.01c-1.4-2.14-3.25-3.95-5.42-5.29"
       />
-      <!-- middle eyelashe -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"
         pathLength="1"
         d="M512.18,90.69v-6.16"
       />
-      <!-- right eyelashe -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"
         pathLength="1"
         d="M523.49,95.03h0c1.09-.78,2.09-1.69,3.02-2.66s1.82-1.99,2.55-3.11"
       />
-      <!-- outer eye -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"
         pathLength="1"
         d="M501.23,97.38h0c-1.57,2.68-1.15,6.19,.8,8.56s5.44,2.99,8.26,1.85,4.67-4.04,4.38-7.19c-.28-2.98-2.19-5.65-5.15-6.41s-6.72,.31-8.29,3.19"
       />
-      <!-- pupille -->
       <path
         class="path"
         :stroke-width="[$colorMode.value === 'light' ? '2' : '1.5']"

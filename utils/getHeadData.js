@@ -40,12 +40,12 @@ export const facebook = (path = []) => {
       hid: 'og:url',
       property: 'og:url',
       content: config.app.url + path
+    },
+    {
+      hid: 'og:image',
+      property: 'og:image',
+      content: config.app.url + require('~/assets/images/facebook-img.jpg')
     }
-    // {
-    //   hid: 'og:image',
-    //   property: 'og:image',
-    //   content: config.app.url + require('~/assets/images/facebook-img.jpg')
-    // }
   ]
 }
 
@@ -65,12 +65,12 @@ export const twitter = () => {
       hid: 'twitter:description',
       name: 'twitter:description',
       content: config.app.description
+    },
+    {
+      hid: 'twitter:image:src',
+      name: 'twitter:image:src',
+      content: config.app.url + require('~/assets/images/twitter-img.jpg')
     }
-    // {
-    //   hid: 'twitter:image:src',
-    //   name: 'twitter:image:src',
-    //   content: config.app.url + require('~/assets/images/twitter-img.jpg')
-    // }
   ]
 }
 

@@ -38,7 +38,6 @@ export default {
 
   methods: {
     buttonHighlight() {
-      const letters = document.querySelectorAll('.enter_letter')
       const nameLetters = document.querySelector('.name_letter')
 
       const initButtonAnimation = function () {
@@ -46,6 +45,7 @@ export default {
       }.bind(this)
 
       nameLetters.addEventListener('animationend', () => {
+        const letters = document.querySelectorAll('.enter_letter')
         this.$gsap.from(letters, {
           y: 5,
           duration: 1.5,

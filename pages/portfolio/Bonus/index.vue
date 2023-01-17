@@ -6,6 +6,62 @@
     <div v-if="$store.state.language.chosenLanguage == 'french'" id="intro">
       Merci d'être arrivé jusqu'ici.
     </div>
+    <div class="thanks">
+      <div
+        v-if="$store.state.language.chosenLanguage == 'english'"
+        class="thanks_text"
+      >
+        As a bonus here are my favorites playlists to work with :
+      </div>
+      <div
+        v-if="$store.state.language.chosenLanguage == 'french'"
+        class="thanks_text"
+      >
+        En bonus voici mes morceaux préférés pour travailler :
+      </div>
+
+      <div
+        v-if="$store.state.language.chosenLanguage == 'english'"
+        class="playlists"
+      >
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
+          >DEEP THINKING</a
+        >
+
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
+          >MOTIVATE ME</a
+        >
+      </div>
+
+      <div
+        v-if="$store.state.language.chosenLanguage == 'french'"
+        class="playlists"
+      >
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
+          >APAISANT</a
+        >
+
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
+          >MOTIVANT</a
+        >
+      </div>
+    </div>
     <div class="credit">
       <div class="credit_text">
         Illustrations :
@@ -77,62 +133,6 @@
         >
       </div>
     </div>
-    <div class="thanks">
-      <div
-        v-if="$store.state.language.chosenLanguage == 'english'"
-        class="thanks_text"
-      >
-        As a bonus here are my favorites playlists to work with :
-      </div>
-      <div
-        v-if="$store.state.language.chosenLanguage == 'french'"
-        class="thanks_text"
-      >
-        En bonus voici mes morceaux préférés pour travailler :
-      </div>
-
-      <div
-        v-if="$store.state.language.chosenLanguage == 'english'"
-        class="playlists"
-      >
-        <a
-          class="playlist"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
-          >DEEP THINKING</a
-        >
-
-        <a
-          class="playlist"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
-          >MOTIVATE ME</a
-        >
-      </div>
-
-      <div
-        v-if="$store.state.language.chosenLanguage == 'french'"
-        class="playlists"
-      >
-        <a
-          class="playlist"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
-          >APAISANT</a
-        >
-
-        <a
-          class="playlist"
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
-          >MOTIVANT</a
-        >
-      </div>
-    </div>
   </section>
 </template>
 
@@ -147,16 +147,6 @@ export default {
 </script>
 
 <style scoped>
-section {
-  background-color: transparent;
-  min-height: 101vh;
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 #intro {
   font-family: 'Outfit';
   font-weight: 100;
@@ -167,7 +157,7 @@ section {
 }
 
 .thanks,
-.creedit {
+.credit {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
@@ -175,19 +165,24 @@ section {
   width: 90vw;
 }
 
+.credit {
+  margin-top: 3rem;
+  margin-bottom: 6rem;
+}
+
 .credit_text {
   width: 100%;
-  margin: 2rem 0rem;
+  margin-top: 1rem;
   font-family: 'Outfit';
   font-weight: 100;
-  font-size: 2rem;
-  line-height: 2.5rem;
+  font-size: 1.5rem;
+  line-height: 2rem;
   text-align: center;
 }
 
 .thanks_text {
   width: 100%;
-  margin-top: 2rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   font-family: 'Outfit';
   font-weight: 100;
@@ -240,6 +235,7 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   width: 100%;
+  margin-bottom: 2rem;
 }
 
 .playlist {
@@ -285,5 +281,15 @@ section {
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
+}
+
+/* Safari specific */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .playlist:hover,
+    .playlist:active {
+      font-size: 1.5rem;
+    }
+  }
 }
 </style>
