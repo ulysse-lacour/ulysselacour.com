@@ -186,7 +186,7 @@ export default {
 
 <style scoped>
 .page_container {
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 section {

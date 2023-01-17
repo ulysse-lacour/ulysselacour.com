@@ -86,5 +86,6 @@ export default {
 <style scoped>
 .page_container {
   overflow-x: hidden;
+  height: 100%;
 }
 </style>

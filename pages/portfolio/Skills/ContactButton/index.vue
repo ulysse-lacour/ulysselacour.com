@@ -42,7 +42,7 @@ export default {}
   justify-content: center;
   width: 10rem;
   padding: 0.4rem 4rem;
-  margin-top: 2rem;
+  margin-top: 4rem;
   font-family: 'Outfit';
   font-weight: 900;
   font-size: 1.5rem;

@@ -323,7 +323,7 @@
                   class="partner_link"
                   target="_blank"
                   rel="noopener noreferrer"
-                  href="#"
+                  href="https://github.com/priandey"
                   >Pierre&nbsp;Riandey</a
                 >, we made a management accounting tool prototype for the
                 restaurant/music venue of
@@ -576,6 +576,15 @@ export default {
 
   methods: {
     ShowVideo(video, event) {
+      const videoPlayer = document.querySelector('video')
+      videoPlayer.setAttribute('poster', `/images/videoPoster/${video}.png`)
+      const existingSource = videoPlayer.querySelector('source')
+      if (existingSource != null) existingSource.remove()
+      const source = document.createElement('source')
+      source.setAttribute('src', `/videos/${video}.webm`)
+      source.setAttribute('type', 'video/webm')
+      videoPlayer.appendChild(source)
+      videoPlayer.load()
       this.showModal = true
       this.chosenModal = video
     },

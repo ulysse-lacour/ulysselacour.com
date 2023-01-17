@@ -15,7 +15,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="python_skills" class="skills_list">
-            Django, Flask, SQLAlchemy, Graphene &#38;&nbsp;Selenium
+            Django, Flask, SQLAlchemy &#38;&nbsp;Graphene
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -59,6 +59,33 @@
           </div>
           <h3 id="web_skills" class="skills_list">
             Nginx, Gunicorn, Node.js &#38;&nbsp;PM2
+          </h3>
+          <div class="borderTopLeft"></div>
+          <div class="borderBottomLeft"></div>
+          <div class="borderTopRight"></div>
+          <div class="borderBottomRight"></div>
+        </div>
+      </div>
+
+      <div class="skill_container">
+        <div id="data_card" class="skill_card" @click="showDetails">
+          <div id="data_header" class="skill_header">
+            <h2
+              v-if="$store.state.language.chosenLanguage == 'english'"
+              style="margin-left: 1.5rem"
+            >
+              Data analysis
+            </h2>
+            <h2
+              v-if="$store.state.language.chosenLanguage == 'french'"
+              style="margin-left: 1.5rem"
+            >
+              Data analyse
+            </h2>
+            <AnimatedChevron />
+          </div>
+          <h3 id="data_skills" class="skills_list">
+            Selenium, Pandas, OpenPyXL &#38;&nbsp;Regex
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -286,39 +313,16 @@ section {
 
 #python_card,
 #js_card,
-#web_card {
-  width: 300px;
-  cursor: pointer;
-}
-
+#web_card,
+#data_card,
 #sql_card {
-  width: 350px;
+  width: 300px;
   cursor: pointer;
 }
 
 #other_card {
   cursor: default;
   margin-bottom: 2rem;
-}
-
-#python_header {
-  width: 210px;
-}
-#js_header {
-  width: 260px;
-}
-#web_header {
-  width: 290px;
-}
-#sql_header {
-  width: 170px;
-}
-
-#python_skills,
-#js_skills,
-#web_skills,
-#sql_skills {
-  max-height: 60px;
 }
 
 .skill_header {

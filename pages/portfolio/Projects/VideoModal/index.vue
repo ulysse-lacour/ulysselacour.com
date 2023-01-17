@@ -17,19 +17,10 @@
           ></path>
         </svg>
       </button>
+
       <h1 id="title">{{ videoToShow }}</h1>
-      <video controls muted>
-        <source
-          v-if="videoToShow == 'HOMEWORKS'"
-          src="/videos/HOMEWORKS.webm"
-          type="video/webm"
-        />
-        <p>
-          Votre navigateur ne prend pas en charge les vidéos HTML5. Voici
-          <a href="/videos/Homeworks.webm">un lien pour télécharger la vidéo</a
-          >.
-        </p>
-      </video>
+
+      <video id="videoPlayer" controls muted></video>
     </div>
   </div>
 </template>
@@ -171,7 +162,7 @@ video {
 
 .fade-enter-active,
 .fade-leave-active {
-  transition: opacity 0.5s;
+  transition: opacity 0.25s;
 }
 
 .fade-enter,
