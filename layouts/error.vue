@@ -20,7 +20,7 @@
       <span style="font-family: 'Typefesse'"></span>
       <span style="font-family: 'Typefesse-full'"></span>
     </div>
-    <section class="page_container">
+    <section id="error" class="page_container">
       <div class="errorStatusCode">
         <div
           v-for="(char, index) in JSON.stringify(error.statusCode)"
@@ -106,7 +106,7 @@ export default {
 </script>
 
 <style scoped>
-section {
+#error {
   background-color: transparent;
   min-height: 100vh;
   display: flex;

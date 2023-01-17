@@ -6,133 +6,131 @@
     <div v-if="$store.state.language.chosenLanguage == 'french'" id="intro">
       Merci d'être arrivé jusqu'ici.
     </div>
-    <div class="js-scroll slide-in-bottom">
-      <div class="thanks">
-        <div
-          v-if="$store.state.language.chosenLanguage == 'english'"
-          class="thanks_text"
-        >
-          As a bonus here are my favorites playlists to work with :
-        </div>
-        <div
-          v-if="$store.state.language.chosenLanguage == 'french'"
-          class="thanks_text"
-        >
-          En bonus voici mes morceaux préférés pour travailler :
-        </div>
-
-        <div
-          v-if="$store.state.language.chosenLanguage == 'english'"
-          class="playlists"
-        >
-          <a
-            class="playlist"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
-            >DEEP THINKING</a
-          >
-
-          <a
-            class="playlist"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
-            >MOTIVATE ME</a
-          >
-        </div>
-
-        <div
-          v-if="$store.state.language.chosenLanguage == 'french'"
-          class="playlists"
-        >
-          <a
-            class="playlist"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
-            >APAISANT</a
-          >
-
-          <a
-            class="playlist"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
-            >MOTIVANT</a
-          >
-        </div>
+    <div class="thanks">
+      <div
+        v-if="$store.state.language.chosenLanguage == 'english'"
+        class="thanks_text"
+      >
+        As a bonus here are my favorites playlists to work with :
       </div>
-      <div class="credit">
-        <div class="credit_text">
-          Illustrations :
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://naomiprostkasbi.com/"
-          >
-            Naomi&nbsp;Prost-Kasbi</a
-          >
-        </div>
-        <div
-          v-if="$store.state.language.chosenLanguage == 'english'"
-          class="credit_text"
+      <div
+        v-if="$store.state.language.chosenLanguage == 'french'"
+        class="thanks_text"
+      >
+        En bonus voici mes morceaux préférés pour travailler :
+      </div>
+
+      <div
+        v-if="$store.state.language.chosenLanguage == 'english'"
+        class="playlists"
+      >
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
+          >DEEP THINKING</a
         >
-          Fonts :
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.fontshare.com/fonts/outfit"
-            >Outfit</a
-          >
-          /
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://velvetyne.fr/fonts/typefesse/"
-            >Typefesse</a
-          >
-          /
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://velvetyne.fr/fonts/degheest/"
-            >Director</a
-          >
-        </div>
-        <div
-          v-if="$store.state.language.chosenLanguage == 'french'"
-          class="credit_text"
+
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
+          >MOTIVATE ME</a
         >
-          Typographies :
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://www.fontshare.com/fonts/outfit"
-            >Outfit</a
-          >
-          /
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://velvetyne.fr/fonts/typefesse/"
-            >Typefesse</a
-          >
-          /
-          <a
-            class="partner_link"
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://velvetyne.fr/fonts/degheest/"
-            >Director</a
-          >
-        </div>
+      </div>
+
+      <div
+        v-if="$store.state.language.chosenLanguage == 'french'"
+        class="playlists"
+      >
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/643XSQTnOVEpy79SaCHL2n?si=a2dbba04e3b74110"
+          >APAISANT</a
+        >
+
+        <a
+          class="playlist"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://open.spotify.com/playlist/0Sy2FekTmarSS9SAlFl73N?si=018793d988ef49d4"
+          >MOTIVANT</a
+        >
+      </div>
+    </div>
+    <div class="credit">
+      <div class="credit_text">
+        Illustrations :
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://naomiprostkasbi.com/"
+        >
+          Naomi&nbsp;Prost-Kasbi</a
+        >
+      </div>
+      <div
+        v-if="$store.state.language.chosenLanguage == 'english'"
+        class="credit_text"
+      >
+        Fonts :
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.fontshare.com/fonts/outfit"
+          >Outfit</a
+        >
+        /
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://velvetyne.fr/fonts/typefesse/"
+          >Typefesse</a
+        >
+        /
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://velvetyne.fr/fonts/degheest/"
+          >Director</a
+        >
+      </div>
+      <div
+        v-if="$store.state.language.chosenLanguage == 'french'"
+        class="credit_text"
+      >
+        Typographies :
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.fontshare.com/fonts/outfit"
+          >Outfit</a
+        >
+        /
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://velvetyne.fr/fonts/typefesse/"
+          >Typefesse</a
+        >
+        /
+        <a
+          class="partner_link"
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://velvetyne.fr/fonts/degheest/"
+          >Director</a
+        >
       </div>
     </div>
   </section>
@@ -149,16 +147,6 @@ export default {
 </script>
 
 <style scoped>
-section {
-  background-color: transparent;
-  /* min-height: 101vh; */
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-
 #intro {
   font-family: 'Outfit';
   font-weight: 100;
@@ -179,6 +167,7 @@ section {
 
 .credit {
   margin-top: 3rem;
+  margin-bottom: 6rem;
 }
 
 .credit_text {
@@ -292,5 +281,15 @@ section {
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
+}
+
+/* Safari specific */
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .playlist:hover,
+    .playlist:active {
+      font-size: 1.5rem;
+    }
+  }
 }
 </style>
