@@ -47,9 +47,10 @@ export default {
         else if (progress > 1) progress = 1
         path.style.opacity = 1
         const pathLength = path.getTotalLength()
+        let drawLength = pathLength * progress * 1.25
+        if (drawLength > pathLength) drawLength = pathLength
         path.style.strokeDasharray = pathLength
         path.style.strokeDashoffset = pathLength
-        const drawLength = pathLength * progress
         path.style.strokeDashoffset = pathLength - drawLength
       })
     }
