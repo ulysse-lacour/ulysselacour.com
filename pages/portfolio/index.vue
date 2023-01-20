@@ -147,29 +147,14 @@ export default {
         )
       }
 
-      const elementOutofView = el => {
-        const elementTop = el.getBoundingClientRect().top
-
-        return (
-          elementTop >
-          (window.innerHeight || document.documentElement.clientHeight)
-        )
-      }
-
       const displayScrollElement = element => {
         element.classList.add('scrolled')
-      }
-
-      const hideScrollElement = element => {
-        element.classList.remove('scrolled')
       }
 
       const handleScrollAnimation = () => {
         scrollElements.forEach(el => {
           if (elementInView(el, 1.25)) {
             displayScrollElement(el)
-          } else if (elementOutofView(el)) {
-            hideScrollElement(el)
           }
         })
       }
@@ -186,7 +171,8 @@ export default {
 
 <style scoped>
 .page_container {
-  /* overflow-x: hidden; */
+  /* overflow-x: hidden;
+  height: 100%; */
 }
 
 section {

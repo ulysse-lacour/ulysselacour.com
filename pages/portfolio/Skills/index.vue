@@ -218,7 +218,7 @@ section {
 .hider {
   overflow: hidden;
   line-height: 2.5rem;
-  margin-top: 4rem;
+  margin-top: 6rem;
   margin-bottom: 6rem;
 }
 
@@ -260,8 +260,7 @@ section {
   transition: 0.25s;
 }
 
-.skill_card:hover,
-.skill_card:active {
+.skill_card:hover {
   -webkit-transform: scale(1.05);
   transform: scale(1.05);
   transition: 0.25s;

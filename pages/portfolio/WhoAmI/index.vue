@@ -417,7 +417,11 @@ export default {
 
 @media only screen and (max-width: 440px) {
   .link {
-    font-size: 1rem;
+    font-size: 1.25rem;
+  }
+
+  .links {
+    width: 90vw;
   }
 }
 
