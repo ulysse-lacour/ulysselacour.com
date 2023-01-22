@@ -65,6 +65,7 @@ export default {
   background-color: transparent;
   height: 400vh;
   width: 100vw;
+  max-width: 100%;
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
@@ -75,8 +76,9 @@ export default {
   position: -webkit-sticky;
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
+  max-width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

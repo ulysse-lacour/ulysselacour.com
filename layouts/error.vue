@@ -108,7 +108,7 @@ export default {
 <style scoped>
 #error {
   background-color: transparent;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -137,6 +137,7 @@ export default {
   justify-content: center;
   align-items: center;
   width: 100vw;
+  max-width: 100%;
   flex-wrap: wrap;
 }
 

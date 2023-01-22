@@ -209,6 +209,7 @@ section {
   background-color: transparent;
   min-height: 101vh;
   width: 100vw;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -348,9 +349,9 @@ section {
   transform-origin: top;
 }
 
-@media only screen and (max-width: 640px) {
-}
-
-@media (min-width: 640px) and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
+  .hider {
+    margin-top: 0.5rem;
+  }
 }
 </style>

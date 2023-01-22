@@ -107,13 +107,33 @@ export default {
     },
 
     animateOnLoad() {
-      const params = document.querySelector('.params_wheel')
+      // Throttle
+      let throttleTimer
+      const throttle = (callback, time) => {
+        if (throttleTimer) return
+        throttleTimer = true
+        setTimeout(() => {
+          callback()
+          throttleTimer = false
+        }, time)
+      }
 
-      window.addEventListener('scroll', () => {
-        params.style.transform = `rotate(${
-          document.documentElement.scrollTop * 0.15
-        }deg)`
-      })
+      const params = document.querySelector('.params_wheel')
+      const style = getComputedStyle(params)
+
+      if (style.position === 'absolute') {
+        window.addEventListener('scroll', () => {
+          throttle(() => {
+            this.HideParams()
+          }, 250)
+        })
+      } else {
+        window.addEventListener('scroll', () => {
+          params.style.transform = `rotate(${
+            document.documentElement.scrollTop * 0.15
+          }deg)`
+        })
+      }
     },
 
     ShowParams() {
@@ -408,6 +428,11 @@ export default {
 }
 
 @media only screen and (max-width: 640px) {
+  .parameters {
+    position: relative;
+    overflow: hidden;
+    height: 60px;
+  }
   .params_wheel {
     position: absolute;
     right: 1rem;
@@ -429,6 +454,11 @@ export default {
 }
 
 @media (min-width: 640px) and (max-width: 1024px) {
+  .parameters {
+    position: relative;
+    overflow: hidden;
+    height: 60px;
+  }
   .params_wheel {
     position: absolute;
   }

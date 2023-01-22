@@ -52,6 +52,7 @@ export default {
   z-index: 10;
   position: fixed;
   width: 100vw;
+  max-width: 100%;
   top: 0;
   bottom: 0;
   display: flex;
@@ -69,6 +70,7 @@ export default {
   position: absolute;
   z-index: -1;
   width: 100vw;
+  max-width: 100%;
   height: 100%;
   top: 0;
   left: 0;
