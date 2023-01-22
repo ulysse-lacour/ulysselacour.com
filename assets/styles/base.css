@@ -157,3 +157,17 @@ body {
     }
   }
 }
+
+/* Mobile specific */
+@media only screen and (max-width: 640px) {
+  body {
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+
+  /* Grain effect */
+  .page_container:after {
+    -webkit-transition: 0s;
+    transition: 0s;
+  }
+}
