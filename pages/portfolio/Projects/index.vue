@@ -112,7 +112,7 @@
                   data-src="/images/Jolify1.png"
                   data-idx="1"
                   class="lazyload"
-                  alt="Ulysse Lacour website"
+                  alt="Jolify website, made by Ulysse Lacour"
                   draggable="false"
                   @click="NextImage('Jolify', $event)"
                 />
@@ -242,7 +242,7 @@
                   data-src="/images/Homeworks1.png"
                   data-idx="1"
                   class="lazyload"
-                  alt="Ulysse Lacour website"
+                  alt="Homeworks website, made by Ulysse Lacour"
                   draggable="false"
                   @click="NextImage('Homeworks', $event)"
                 />
@@ -399,7 +399,7 @@
                   data-src="/images/Cultplace1.png"
                   data-idx="1"
                   class="lazyload"
-                  alt="Ulysse Lacour website"
+                  alt="Cultplace.app website, made by Ulysse Lacour"
                   draggable="false"
                   @click="NextImage('Cultplace', $event)"
                 />
@@ -514,7 +514,7 @@
                   data-src="/images/Nao1.png"
                   data-idx="1"
                   class="lazyload"
-                  alt="Ulysse Lacour website"
+                  alt="Naomi Prost-Kasbi website, made by Ulysse Lacour"
                   draggable="false"
                   @click="NextImage('Nao', $event)"
                 />

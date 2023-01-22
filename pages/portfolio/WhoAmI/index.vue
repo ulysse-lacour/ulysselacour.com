@@ -242,8 +242,8 @@
           rel="noopener noreferrer"
           :href="[
             $store.state.language.chosenLanguage == 'french'
-              ? 'pdf/CV_FR.pdf'
-              : 'pdf/CV_EN.pdf'
+              ? 'pdf/CV - ULYSSE LACOUR - FR.pdf'
+              : 'pdf/CV - ULYSSE LACOUR - EN.pdf'
           ]"
           >CV</a
         >
@@ -294,7 +294,7 @@ export default {
 
 .bio_text {
   width: 100%;
-  margin: 2rem 0rem;
+  margin: 1.5rem 0rem;
   font-family: 'Outfit';
   font-weight: 100;
   font-size: 2rem;

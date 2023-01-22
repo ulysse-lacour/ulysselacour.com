@@ -5,6 +5,7 @@
         class="svg_container"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 1062.21 927.62"
+        :stroke-width="[$colorMode.value === 'light' ? '1.5' : '1']"
       >
         <g id="svg_body">
           <path
@@ -95,7 +96,6 @@ path {
 .illu_path {
   display: block;
   opacity: 0;
-  stroke-width: 1;
   stroke-dasharray: 0;
   stroke-dashoffset: 0;
   fill: none;
