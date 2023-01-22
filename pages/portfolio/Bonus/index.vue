@@ -269,7 +269,7 @@ export default {
   -o-transform: scale(1.025);
   -webkit-transform: scale(1.025);
   transform: scale(1.025);
-  font-size: 1.55rem;
+  font-size: 1.6rem;
   -moz-transition: 0.35s;
   -ms-transition: 0.35s;
   -o-transition: 0.35s;
