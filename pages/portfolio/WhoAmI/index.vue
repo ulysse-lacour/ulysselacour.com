@@ -240,7 +240,11 @@
           class="link"
           target="_blank"
           rel="noopener noreferrer"
-          href="#"
+          :href="[
+            $store.state.language.chosenLanguage == 'french'
+              ? 'pdf/CV_FR.pdf'
+              : 'pdf/CV_EN.pdf'
+          ]"
           >CV</a
         >
         <a
@@ -357,7 +361,7 @@ export default {
 .links {
   width: 75vw;
   margin-top: 3rem;
-  margin-bottom: 6rem;
+  margin-bottom: 0;
   border: 1px var(--color) solid;
   border-radius: 30px;
   -webkit-border-radius: 30px;

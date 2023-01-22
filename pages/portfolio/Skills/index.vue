@@ -260,10 +260,12 @@ section {
   transition: 0.25s;
 }
 
-.skill_card:hover {
-  -webkit-transform: scale(1.05);
-  transform: scale(1.05);
-  transition: 0.25s;
+@media (hover: hover) {
+  .skill_card:hover {
+    -webkit-transform: scale(1.05);
+    transform: scale(1.05);
+    transition: 0.25s;
+  }
 }
 
 /* border top & bottom */
