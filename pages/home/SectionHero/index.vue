@@ -29,8 +29,9 @@ export default {
 <style scoped>
 section {
   background-color: transparent;
-  height: 100vh;
+  height: 100svh;
   width: 100vw;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;

@@ -626,7 +626,7 @@ export default {
 <style scoped>
 .projects_container {
   width: 100%;
-  min-height: 100vh;
+  min-height: 100svh;
   display: flex;
   flex-direction: column;
   align-items: center;
