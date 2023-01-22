@@ -118,7 +118,8 @@ export default {
         content:
           'b4992c116d5d9c7e5f2b8d147428875b94ed6c4b5fb81e1a9351952aecf8174c'
       }
-    ]
+    ],
+    link: [{ rel: 'icon', type: 'image/png', href: '/favicon.png' }]
   },
 
   router: {
