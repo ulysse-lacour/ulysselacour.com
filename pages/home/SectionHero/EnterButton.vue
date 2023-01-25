@@ -87,7 +87,7 @@ export default {
       const parameters = document.querySelector('.params_items')
 
       const nexPage = function () {
-        this.$router.push('/portfolio')
+        this.$router.push('/portfolio/')
       }.bind(this)
 
       body.classList.remove('body_path')
