@@ -195,7 +195,7 @@
           class="partner_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://cultplace.fr/"
+          href="https://www.epitech.eu/"
           >Epitech</a
         >
         (<a
@@ -242,8 +242,8 @@
           rel="noopener noreferrer"
           :href="[
             $store.state.language.chosenLanguage == 'french'
-              ? 'pdf/CV - ULYSSE LACOUR - FR.pdf'
-              : 'pdf/CV - ULYSSE LACOUR - EN.pdf'
+              ? 'pdf/CV_ULYSSE_LACOUR_FR.pdf'
+              : 'pdf/CV_ULYSSE_LACOUR_EN.pdf'
           ]"
           >CV</a
         >
