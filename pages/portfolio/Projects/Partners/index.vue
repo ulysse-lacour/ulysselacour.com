@@ -4,7 +4,7 @@
       v-if="$store.state.language.chosenLanguage == 'english'"
       class="partners_catchphrase"
     >
-      Some great peoples and companies I've worked with :
+      Some great people and companies I've worked with :
     </h3>
     <h3
       v-if="$store.state.language.chosenLanguage == 'french'"
@@ -19,6 +19,13 @@
         rel="noopener noreferrer"
         href="https://www.akimbo.eu/"
         >Akimbo</a
+      >,&nbsp;&nbsp;
+      <a
+        class="partner_link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://www.linkedin.com/in/lucas-luvaika-4371b41b5/"
+        >Luvaika</a
       >,&nbsp;&nbsp;
       <a
         class="partner_link"

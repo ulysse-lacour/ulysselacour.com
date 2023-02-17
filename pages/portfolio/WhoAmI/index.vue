@@ -22,7 +22,7 @@
       <div id="bio_asso" class="bio_text js-scroll slide-left">
         First in an association «<span style="font-style: italic"
           >&nbsp;Vous n’avez rien contre la jeunesse ?&nbsp;</span
-        >» I’ve founded. We use to organise concerts and exhibitions to promote
+        >» I’ve founded. We used to organise concerts and exhibitions to promote
         youth creations.
       </div>
       <div id="bio_music" class="bio_text js-scroll slide-left">

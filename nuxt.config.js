@@ -33,12 +33,7 @@ export default {
     '@nuxtjs/color-mode'
   ],
 
-  buildModules: [
-    '@nuxt/postcss8',
-    'nuxt-font-loader',
-    'nuxt-gsap-module',
-    'nuxt-lazysizes'
-  ],
+  buildModules: ['@nuxt/postcss8', 'nuxt-gsap-module', 'nuxt-lazysizes'],
 
   css: ['~/assets/styles/main.css'],
 
@@ -206,10 +201,6 @@ export default {
       lastmod: new Date(),
       lastmodrealtime: true
     }
-  },
-
-  fontLoader: {
-    url: '/fonts/font-face.css'
   },
 
   colorMode: {
