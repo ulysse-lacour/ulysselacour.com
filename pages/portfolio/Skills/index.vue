@@ -58,7 +58,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="web_skills" class="skills_list">
-            Nginx, Gunicorn, Node.js &#38;&nbsp;PM2
+            Nginx, Gunicorn, &#38;&nbsp;PM2
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
