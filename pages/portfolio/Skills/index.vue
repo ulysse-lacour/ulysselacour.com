@@ -15,7 +15,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="python_skills" class="skills_list">
-            Django, Flask, SQLAlchemy &#38;&nbsp;Graphene
+            Django, Flask, Selenium, SQLAlchemy &#38;&nbsp;Graphene
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -31,7 +31,7 @@
             <AnimatedChevron />
           </div>
           <h3 id="js_skills" class="skills_list">
-            Nuxt, Vue, Apollo, Axios, jQuery&nbsp;&#38;&nbsp;Gsap
+            Nuxt, Vue, Next, React, jQuery&nbsp;&#38;&nbsp;Gsap
           </h3>
           <div class="borderTopLeft"></div>
           <div class="borderBottomLeft"></div>
@@ -68,33 +68,6 @@
       </div>
 
       <div class="skill_container">
-        <div id="data_card" class="skill_card" @click="showDetails">
-          <div id="data_header" class="skill_header">
-            <h2
-              v-if="$store.state.language.chosenLanguage == 'english'"
-              style="margin-left: 1.5rem"
-            >
-              Data analysis
-            </h2>
-            <h2
-              v-if="$store.state.language.chosenLanguage == 'french'"
-              style="margin-left: 1.5rem"
-            >
-              Data analyse
-            </h2>
-            <AnimatedChevron />
-          </div>
-          <h3 id="data_skills" class="skills_list">
-            Selenium, Pandas, OpenPyXL &#38;&nbsp;Regex
-          </h3>
-          <div class="borderTopLeft"></div>
-          <div class="borderBottomLeft"></div>
-          <div class="borderTopRight"></div>
-          <div class="borderBottomRight"></div>
-        </div>
-      </div>
-
-      <div class="skill_container">
         <div id="sql_card" class="skill_card" @click="showDetails">
           <div id="sql_header" class="skill_header">
             <h2 style="margin-left: 1.5rem">SQL</h2>
@@ -112,9 +85,18 @@
 
       <div id="other_card" class="skill_card">
         <div id="other_header" class="skill_header">
-          <h2>+ HTML, CSS &#38;&nbsp;Bash</h2>
+          <h2>HTML, CSS &#38;&nbsp;Bash</h2>
         </div>
-        <!-- <h3 class="skills_list"></h3> -->
+        <div class="borderTopLeft"></div>
+        <div class="borderBottomLeft"></div>
+        <div class="borderTopRight"></div>
+        <div class="borderBottomRight"></div>
+      </div>
+
+      <div id="other_card" class="skill_card">
+        <div id="other_header" class="skill_header">
+          <h2>WordPress &#38;&nbsp;Shopify</h2>
+        </div>
         <div class="borderTopLeft"></div>
         <div class="borderBottomLeft"></div>
         <div class="borderTopRight"></div>
@@ -123,17 +105,21 @@
     </div>
 
     <ContactButton />
+
+    <ScrollChevron />
   </section>
 </template>
 
 <script>
 import AnimatedChevron from './AnimatedChevron/index.vue'
 import ContactButton from './ContactButton/index.vue'
+import ScrollChevron from './ScrollChevron/index.vue'
 
 export default {
   components: {
     AnimatedChevron,
-    ContactButton
+    ContactButton,
+    ScrollChevron
   },
 
   mounted() {
