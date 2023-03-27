@@ -6,7 +6,7 @@ const routes = [
   },
   {
     name: 'portfolio',
-    path: '/portfolio/',
+    path: '/portfolio',
     component: 'pages/portfolio/index.vue'
   }
 ]
